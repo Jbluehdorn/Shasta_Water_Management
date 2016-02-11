@@ -1,4 +1,9 @@
-﻿body {
+﻿@font-face {
+    font-family: 'Pacifico';
+    src: url('../fonts/Pacifico.ttf');
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -21,4 +26,19 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/*=========================
+         Header Bar
+  =========================*/
+
+#header-link h1 {
+    display: inline-block;
+    font-family: "Pacifico", cursive;
+    vertical-align: middle;
+    color: white;
+}
+
+#header-link:hover {
+    text-decoration: none;
 }
