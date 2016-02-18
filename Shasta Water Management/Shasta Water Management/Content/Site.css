@@ -31,6 +31,14 @@ textarea {
 /*=========================
          Header Bar
   =========================*/
+header {
+    background: #333;
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 95px;
+}
 
 #header-link h1 {
     display: inline-block;
@@ -41,4 +49,71 @@ textarea {
 
 #header-link:hover {
     text-decoration: none;
+}
+
+#header-link img {
+    height: 95px;   
+}
+
+/*========================
+    Toolbar
+  ========================*/
+#toolbar {
+    width: 200px;
+    float: left;
+    height: 100%;
+    background: #333;
+    color: white;
+}
+
+#toolbar ul {
+    padding: 0;
+    list-style-type: none;  
+}
+
+#toolbar li {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border-color: #444;
+    border-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-right: none;
+    border-left: none;
+    position: relative;
+    cursor: pointer;
+}
+
+#toolbar li.selected {
+    background: #666;
+}
+
+#toolbar li.selected:after {
+    content:"";
+    display: block;
+    border-color: transparent transparent transparent #666;
+    border-width: 10px;
+    border-style: solid;
+    position: absolute;
+    height: 5px;
+    right: -20px;
+    top: 5px;
+}
+
+/*=========================
+    Main
+  =========================*/
+.main {
+    background: #bbb;
+    position: fixed;
+    top: 95px;
+    width: 100%;
+    height: 100%;
+}
+
+.main:after {
+    content: "";
+    display: table;
+    clear: both;
 }
