@@ -2,10 +2,8 @@
     ViewBag.Title = "Home";
 }
 
-<nav id="toolbar">
+<nav id="toolbar" sw-navigation>
     <ul>
-        <li class="selected">Users</li>
-        <li>Abusers</li>
-        <li>Losers</li>
+        <li ng-repeat="category in categories" ng-click="$parent.selected = category" ng-class="{'active' : selected === category}">{{category}}</li>
     </ul>
 </nav>

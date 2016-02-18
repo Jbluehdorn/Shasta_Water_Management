@@ -85,11 +85,11 @@ header {
     cursor: pointer;
 }
 
-#toolbar li.selected {
+#toolbar li.active {
     background: #666;
 }
 
-#toolbar li.selected:after {
+#toolbar li.active:after {
     content:"";
     display: block;
     border-color: transparent transparent transparent #666;
