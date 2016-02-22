@@ -1,0 +1,171 @@
+﻿[
+  {
+      "Name": "Jordan Bluehdorn",
+      "ID": 1,
+      "Phone": "(808)291-0218",
+      "Equipment": [
+          {
+              "ID": 1,
+              "Type": "Machine",
+              "Serial": "2012",
+              "ModelNum": "ABD-123",
+              "Diagnostics": 130000
+          },
+          {
+              "ID": 2,
+              "Type": "Machine",
+              "Serial": "22038",
+              "ModelNum": "ABD-123",
+              "Diagnostics": 149780
+          }
+      ],
+      "LastServiceDate": "/Date(1347992529530)/",
+      "OwnRent": "Own",
+      "ServiceInterval": "6 Months",
+      "Notes": "It's not broken. I promise."
+  },
+  {
+      "Name": "SomeCompany Inc.",
+      "ID": 5,
+      "Phone": "(417)555-9764",
+      "Equipment": [
+          {
+              "ID": 8,
+              "Type": "Machine",
+              "Serial": "2012",
+              "ModelNum": "ABD-123",
+              "Diagnostics": 130000
+          }
+      ],
+      "LastServiceDate": "/Date(1347992529530)/",
+      "OwnRent": "Rent",
+      "ServiceInterval": "1 Day",
+      "Notes": "This one might be broken"
+  },
+  {
+      "Name": "Dale Denton",
+      "ID": 28,
+      "Phone": "(417)555-9032",
+      "Equipment": [
+          {
+              "ID": 20,
+              "Type": "Laundry",
+              "Serial": "B1D-FA3",
+              "ModelNum": "Part",
+              "Diagnostics": 7878
+          }
+      ],
+      "LastServiceDate": "/Date(1398492529530)/",
+      "OwnRent": "Own",
+      "ServiceInterval": "8 weeks",
+      "Notes": "Customer lives in back of property"
+  },
+  {
+      "Name": "Nick Saban",
+      "ID": 66,
+      "Phone": "(971)555-3181",
+      "Equipment": [
+          {
+              "ID": 17,
+              "Type": "Filter",
+              "Serial": "0983123",
+              "ModelNum": "9873123",
+              "Diagnostics": 150764
+          }
+      ],
+      "LastServiceDate": "/Date(1347912529530)/",
+      "OwnRent": "Rent",
+      "ServiceInterval": "6 Months",
+      "Notes": "This is some Freshwater"
+  },
+  {
+      "Name": "Joey Freshwater",
+      "ID": 873,
+      "Phone": "(729)555-8289",
+      "Equipment": [
+          {
+              "ID": 76,
+              "Type": "Vehicle",
+              "Serial": "s3r1@l",
+              "ModelNum": "561-123",
+              "Diagnostics": 7548
+          }
+      ],
+      "LastServiceDate": "/Date(1347189529530)/",
+      "OwnRent": "Own",
+      "ServiceInterval": "5 Weeks",
+      "Notes": "This guy is a jerk"
+  },
+  {
+      "Name": "SomeCompany Inc.",
+      "ID": 5,
+      "Phone": "(417)555-9764",
+      "Equipment": [
+          {
+              "ID": 8,
+              "Type": "Machine",
+              "Serial": "2012",
+              "ModelNum": "ABD-123",
+              "Diagnostics": 130000
+          }
+      ],
+      "LastServiceDate": "/Date(1347992529530)/",
+      "OwnRent": "Rent",
+      "ServiceInterval": "1 Day",
+      "Notes": "This one might be broken"
+  },
+  {
+      "Name": "Mark Webber",
+      "ID": 28,
+      "Phone": "(417)555-9032",
+      "Equipment": [
+          {
+              "ID": 20,
+              "Type": "Laundry",
+              "Serial": "B1D-FA3",
+              "ModelNum": "Part",
+              "Diagnostics": 7878
+          }
+      ],
+      "LastServiceDate": "/Date(1118492529530)/",
+      "OwnRent": "Own",
+      "ServiceInterval": "8 weeks",
+      "Notes": "Customer lives in back of property"
+  },
+  {
+      "Name": "Nick Saban",
+      "ID": 66,
+      "Phone": "(971)555-3181",
+      "Equipment": [
+          {
+              "ID": 17,
+              "Type": "Filter",
+              "Serial": "0983123",
+              "ModelNum": "9873123",
+              "Diagnostics": 150764
+          }
+      ],
+      "LastServiceDate": "/Date(1347912529530)/",
+      "OwnRent": "Rent",
+      "ServiceInterval": "6 Months",
+      "Notes": "This is some Freshwater"
+  },
+  {
+      "Name": "Joey Freshwater",
+      "ID": 873,
+      "Phone": "(729)555-8289",
+      "Equipment": [
+          {
+              "ID": 76,
+              "Type": "Vehicle",
+              "Serial": "s3r1@l",
+              "ModelNum": "561-123",
+              "Diagnostics": 7548
+          }
+      ],
+      "LastServiceDate": "/Date(1347189529530)/",
+      "OwnRent": "Own",
+      "ServiceInterval": "5 Weeks",
+      "Notes": "This guy is a jerk"
+  }
+]

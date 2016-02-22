@@ -1,9 +1,23 @@
 ﻿@{
     ViewBag.Title = "Home";
+    Html.RenderPartial("_ActionDefinitionUrls");
+    Html.RenderPartial("_ConstantDefinitions");
 }
 
 <nav id="toolbar" sw-navigation>
     <ul>
         <li ng-repeat="category in categories" ng-click="$parent.selected = category" ng-class="{'active' : selected === category}">{{category}}</li>
     </ul>
-</nav>
+</nav><!--
+
+--><div class="main-content" sw-navigation>
+    <div ng-show="selected === 'Home'">
+        Home
+    </div>
+    <div ng-show="selected === 'Search'">
+        <search-box></search-box>
+    </div>
+    <div ng-show="selected === 'Add'">
+        Add
+    </div>
+</div>

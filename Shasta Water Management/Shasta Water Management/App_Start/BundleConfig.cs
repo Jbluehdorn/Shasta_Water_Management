@@ -25,7 +25,8 @@ namespace Shasta_Water_Management
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                     "~/Scripts/angular.min.js",
-                    "~/Scripts/sw-app.js"
+                    "~/Scripts/sw-app.js",
+                    "~/Scripts/sw-search.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

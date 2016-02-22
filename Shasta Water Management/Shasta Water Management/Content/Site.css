@@ -8,24 +8,8 @@ body {
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+table {
+  border-collapse: collapse;
 }
 
 /*=========================
@@ -34,7 +18,7 @@ textarea {
 header {
     background: #333;
     margin-top: 0;
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     height: 95px;
@@ -52,7 +36,7 @@ header {
 }
 
 #header-link img {
-    height: 95px;   
+    height: 95px;
 }
 
 /*========================
@@ -60,19 +44,22 @@ header {
   ========================*/
 #toolbar {
     width: 200px;
-    float: left;
+    display: block;
     height: 100%;
     background: #333;
     color: white;
+    font-size: 1.5em;
+    float: left;
 }
 
 #toolbar ul {
     padding: 0;
-    list-style-type: none;  
+    list-style-type: none;
 }
 
 #toolbar li {
     width: 100%;
+    height: 40px;
     text-align: center;
     padding: 5px;
     border-color: #444;
@@ -89,18 +76,6 @@ header {
     background: #666;
 }
 
-#toolbar li.active:after {
-    content:"";
-    display: block;
-    border-color: transparent transparent transparent #666;
-    border-width: 10px;
-    border-style: solid;
-    position: absolute;
-    height: 5px;
-    right: -20px;
-    top: 5px;
-}
-
 /*=========================
     Main
   =========================*/
@@ -112,8 +87,163 @@ header {
     height: 100%;
 }
 
-.main:after {
-    content: "";
-    display: table;
-    clear: both;
+.main-content {
+    display: block;
+    width: calc(100% - 200px);
+    height: 100%;
+    vertical-align: top;
+    float: right;
+    overflow: auto;
+}
+
+/*Fixes an overflow glitch*/
+.main-content:after {
+  content: "";
+  display: block;
+  height: 95px;
+}
+
+/*============================
+        Search
+  ============================*/
+#customer-table {
+  background: #ddd;
+  width: 100%;
+}
+
+#customer-table thead {
+  cursor: pointer;
+  background: #888;
+  color: white;
+}
+
+#customer-table td, #customer-table th {
+  padding: 5px;
+  text-align: center;
+}
+
+#customer-table tbody tr:nth-child(odd) {
+  background: #eee;
+}
+
+#customer-table tbody tr:hover {
+  cursor: pointer;
+  background: #777;
+  color: white;
+}
+
+#customer-table tfoot {
+  background: #888;
+}
+
+#customer-table tfoot ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  width: 300px;
+  float: right;
+  height: 41px;
+  margin-bottom: 0;
+}
+
+#customer-table tfoot li {
+  display: inline-block;
+}
+
+#customer-table tfoot li:first-child {
+  position: absolute;
+  left: 0;
+}
+
+#customer-table tfoot li:last-child {
+  position: absolute;
+  right: 0;
+}
+
+#customer-table tfoot a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+#customer-table tfoot a.disabled {
+  cursor: auto;
+  color: #999;
+}
+
+#customer-table tfoot a.currentPage {
+  /*color: blue;*/
+  background: #ddd;
+  color: #666;
+  border-radius: 5px;
+}
+
+.order {
+  display: inline-block;
+  content: "";
+  border-color: #444 transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px;
+  vertical-align: middle;
+  position: relative;
+  left: 5px;
+}
+
+.order.reverse {
+  border-color: transparent transparent #444 transparent;
+  bottom: 5px;
+}
+
+/*----------------------------
+        searchbar
+  ----------------------------*/
+.searchBar {
+  height: 45px;
+  padding: 5px 5px;
+  background: #555;
+  color: white;
+}
+
+.searchBar .search-group {
+  vertical-align: top;
+  display: inline-block;
+  width: 400px;
+  margin-right: 15px;
+}
+
+.searchBar .inner-addon {
+  display: inline-block;
+  color: #666;
+  width: 300px;
+}
+
+.searchBar * {
+  vertical-align: bottom;
+}
+
+.searchBar label {
+  font-size: 1.3em;
+}
+
+.searchBar .search-group select {
+  width: 65px;
+  display: inline-block;
+}
+
+/*============================
+        Misc.
+  ============================*/
+.inner-addon {
+  position: relative;
+  width: 100%;
+}
+
+.inner-addon .glyphicon {
+  position: absolute;
+  right: 5px;
+  pointer-events: none;
+  padding: 6px;
+  font-size: 1.2em;
 }
