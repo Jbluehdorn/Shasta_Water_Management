@@ -10,19 +10,20 @@
               "Type": "Machine",
               "Serial": "2012",
               "ModelNum": "ABD-123",
-              "Diagnostics": 130000
+            "Diagnostics": 130000,
+                "OwnRent":  "Rent"
           },
           {
               "ID": 2,
               "Type": "Machine",
               "Serial": "22038",
               "ModelNum": "ABD-123",
-              "Diagnostics": 149780
+            "Diagnostics": 149780,
+            "OwnRent": "Own"
           }
       ],
       "LastServiceDate": "/Date(1347992529530)/",
-      "OwnRent": "Own",
-      "ServiceInterval": "6 Months",
+      "ServiceInterval": 180,
       "Notes": "It's not broken. I promise."
   },
   {
@@ -36,12 +37,12 @@
               "Type": "Machine",
               "Serial": "2012",
               "ModelNum": "ABD-123",
-              "Diagnostics": 130000
+            "Diagnostics": 130000,
+            "OwnRent": "Own"
           }
       ],
       "LastServiceDate": "/Date(1347992529530)/",
-      "OwnRent": "Rent",
-      "ServiceInterval": "1 Day",
+      "ServiceInterval": 60,
       "Notes": "This one might be broken"
   },
   {
@@ -55,12 +56,12 @@
               "Type": "Laundry",
               "Serial": "B1D-FA3",
               "ModelNum": "Part",
-              "Diagnostics": 7878
+            "Diagnostics": 7878,
+            "OwnRent":  "Own"
           }
       ],
       "LastServiceDate": "/Date(1398492529530)/",
-      "OwnRent": "Own",
-      "ServiceInterval": "8 weeks",
+      "ServiceInterval": 60,
       "Notes": "Customer lives in back of property"
   },
   {
@@ -74,12 +75,12 @@
               "Type": "Filter",
               "Serial": "0983123",
               "ModelNum": "9873123",
-              "Diagnostics": 150764
+            "Diagnostics": 150764,
+            "OwnRent":  "Own"
           }
       ],
       "LastServiceDate": "/Date(1347912529530)/",
-      "OwnRent": "Rent",
-      "ServiceInterval": "6 Months",
+      "ServiceInterval": 180,
       "Notes": "This is some Freshwater"
   },
   {
@@ -93,12 +94,12 @@
               "Type": "Vehicle",
               "Serial": "s3r1@l",
               "ModelNum": "561-123",
-              "Diagnostics": 7548
+            "Diagnostics": 7548,
+            "OwnRent": "Rent"
           }
       ],
       "LastServiceDate": "/Date(1347189529530)/",
-      "OwnRent": "Own",
-      "ServiceInterval": "5 Weeks",
+      "ServiceInterval": 180,
       "Notes": "This guy is a jerk"
   },
   {
@@ -112,12 +113,12 @@
               "Type": "Machine",
               "Serial": "2012",
               "ModelNum": "ABD-123",
-              "Diagnostics": 130000
+            "Diagnostics": 130000,
+            "OwnRent":  "Rent"
           }
       ],
       "LastServiceDate": "/Date(1347992529530)/",
-      "OwnRent": "Rent",
-      "ServiceInterval": "1 Day",
+      "ServiceInterval": 90,
       "Notes": "This one might be broken"
   },
   {
@@ -131,12 +132,12 @@
               "Type": "Laundry",
               "Serial": "B1D-FA3",
               "ModelNum": "Part",
-              "Diagnostics": 7878
+            "Diagnostics": 7878,
+            "OwnRent": "Own"
           }
       ],
       "LastServiceDate": "/Date(1118492529530)/",
-      "OwnRent": "Own",
-      "ServiceInterval": "8 weeks",
+      "ServiceInterval": 180,
       "Notes": "Customer lives in back of property"
   },
   {
@@ -150,12 +151,13 @@
               "Type": "Filter",
               "Serial": "0983123",
               "ModelNum": "9873123",
-              "Diagnostics": 150764
+            "Diagnostics": 150764,
+                "OwnRent":  "Rent"
           }
       ],
       "LastServiceDate": "/Date(1347912529530)/",
       "OwnRent": "Rent",
-      "ServiceInterval": "6 Months",
+      "ServiceInterval": 180,
       "Notes": "This is some Freshwater"
   },
   {
@@ -169,12 +171,13 @@
               "Type": "Vehicle",
               "Serial": "s3r1@l",
               "ModelNum": "561-123",
-              "Diagnostics": 7548
+            "Diagnostics": 7548,
+            "OwnRent":  "Own"
           }
       ],
       "LastServiceDate": "/Date(1347189529530)/",
       "OwnRent": "Own",
-      "ServiceInterval": "5 Weeks",
+      "ServiceInterval": 150,
       "Notes": "This guy is a jerk"
   }
 ]

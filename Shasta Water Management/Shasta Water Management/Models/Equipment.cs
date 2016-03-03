@@ -11,6 +11,7 @@ namespace Shasta_Water_Management.Models
         public string Type { get; set; }
         public string Serial { get; set; }
         public string ModelNum { get; set; }
-        public int Diagnostics { get; set; }
+        public string Diagnostics { get; set; }
+        public string OwnRent { get; set; }
     }
 }
