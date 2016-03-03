@@ -14,6 +14,7 @@ namespace Shasta_Water_Management.Controllers
         /// Gets all Customers
         /// </summary>
         /// <returns>JSON List of Customers</returns>
+        [HttpGet]
         public ActionResult GetCustomers()
         {
             IEnumerable<Customer> customers = new List<Customer>();
@@ -21,6 +22,21 @@ namespace Shasta_Water_Management.Controllers
             customers = CustomerRepository.GetCustomers();
 
             return Json(customers, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// Brings up the customer profile page
+        /// </summary>
+        /// <param name="id">customer id</param>
+        /// <returns>View</returns>
+        [HttpGet]
+        public ActionResult Search(string id)
+        {
+            var customer = new Customer();
+
+            customer = CustomerRepository.GetCustomer(id);
+
+            return View("CustomerProfile", customer);
         }
     }
 }

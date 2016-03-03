@@ -1,13 +1,20 @@
-﻿angular.module('shasta-water', ['search'])
+﻿angular.module('shasta-water', ['search', 'customer-profile'])
     //Holds the navigation information for the page
-    .directive('swNavigation', function () {
+    .directive('swNavigation', ['$location', function ($location) {
         return {
             restrict: 'A',
             controller: ['$scope', function ($scope) {
               $scope.categories = ['Home', 'Search', 'Add'];
 
-              $scope.selected = $scope.categories[0];
-              $scope.selected = 'Search';
+              
+              $scope.page = page;
+
+              $scope.changePage = function (destination) {
+                  if (destination == 'Home')
+                      destination = '/';
+                  console.log(location.origin + '/' + destination);
+                  window.location = '/Home/' + destination;
+              };
             }]
         }
-    });
+    }]);

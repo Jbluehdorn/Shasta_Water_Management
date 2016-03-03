@@ -25,13 +25,21 @@ namespace Shasta_Water_Management
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                     "~/Scripts/angular.min.js",
+                    "~/Scripts/angular-route.min.js",
                     "~/Scripts/sw-app.js",
-                    "~/Scripts/sw-search.js"
+                    "~/Scripts/sw-search.js",
+                    "~/Scripts/sw-profile.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/site").Include(
+                "~/Scripts/sweetalert.min.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/sweetalert.css"
+                ));
         }
     }
 }

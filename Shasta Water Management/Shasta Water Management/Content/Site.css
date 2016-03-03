@@ -12,6 +12,10 @@ table {
   border-collapse: collapse;
 }
 
+textarea {
+    resize: none;
+}
+
 /*=========================
          Header Bar
   =========================*/
@@ -60,8 +64,8 @@ header {
 #toolbar li {
     width: 100%;
     height: 40px;
+    line-height: 40px;
     text-align: center;
-    padding: 5px;
     border-color: #444;
     border-style: solid;
     border-top-width: 1px;
@@ -230,6 +234,74 @@ header {
 .searchBar .search-group select {
   width: 65px;
   display: inline-block;
+}
+
+/*============================
+        Customer Profile
+  ============================*/
+.customer-profile h1, .customer-profile h2 {
+  background: #333;
+  border: 1px solid #444;
+  border-right: none;
+  color: white;
+  margin: 0;
+  padding: 10px;
+}
+
+.customer-profile h2 {
+    font-size: 1.7em;
+}
+
+.customer-info-holder {
+    padding: 10px;
+}
+
+.customer-field {
+    width: 250px;
+}
+
+.customer-field .inner-addon .glyphicon, editable-textarea .inner-addon .glyphicon {
+    pointer-events: initial;
+    cursor: pointer;
+}
+
+editable-field {
+    display: inline-block;
+}
+
+.equipment {
+    display: inline-block;
+    width: 500px;
+    padding: 10px;
+    position: relative;
+    background: #ddd;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.equipment .glyphicon-remove-circle {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1.7em;
+    cursor: pointer;
+}
+
+.equipment .glyphicon-remove-circle:hover {
+    color: #C00;
+}
+
+.equipment h3 {
+    margin-top: 0;
+}
+
+.address {
+    display: inline-block;
+    width: 400px;
+}
+
+.address textarea {
+    height: 75px;
 }
 
 /*============================

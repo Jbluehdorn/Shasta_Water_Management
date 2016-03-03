@@ -15,5 +15,6 @@ namespace Shasta_Water_Management.Models
         public string OwnRent { get; set; }
         public string ServiceInterval { get; set; }
         public string Notes { get; set; }
+        public string Address { get; set; }
     }
 }

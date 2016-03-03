@@ -1,0 +1,7 @@
+﻿<div class="form-group">
+    <label class="control-label">{{title}}:</label>
+    <div class="inner-addon">
+        <span class="glyphicon glyphicon-pencil" ng-class="{'glyphicon-remove-circle': editable}" ng-click="changeEditMode()"></span>
+        <textarea class="form-control" ng-model="field" ng-disabled="!editable"></textarea>
+    </div>
+</div>

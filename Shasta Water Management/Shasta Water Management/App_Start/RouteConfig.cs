@@ -14,6 +14,12 @@ namespace Shasta_Water_Management
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "customer",
+                url: "Home/Search/{id}",
+                defaults: new { controller = "Customer", action = "Search" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

@@ -1,0 +1,7 @@
+﻿<div class="customer-field form-group" editable ng-class="{'enabled': editable}">
+    <label class="control-label">{{title}}:</label>
+    <div class="inner-addon">
+        <input type="text" class="form-control" ng-model="field" ng-disabled="!editable" />
+        <span class="glyphicon glyphicon-pencil" ng-class="{'glyphicon-remove-circle': editable}" ng-click="changeEditMode()"></span>
+    </div>
+</div>

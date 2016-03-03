@@ -3,10 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Shasta Water Co.</title>
+    <title>Shasta Water Co.</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <script>
+        var page = "@ViewBag.Title";
+    </script>
 </head>
 <body>
     <header>
@@ -16,11 +19,19 @@
         </a>
     </header>
     <div class="main">
-        @RenderBody()
+      <nav id="toolbar" sw-navigation>
+        <ul>
+            <li ng-repeat="category in categories" ng-class="{'active': page === category}" ng-click="changePage(category)">{{category}}</li>
+        </ul>
+        </nav><!--
+     --><div class="main-content" sw-navigation>
+            @RenderBody()
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/site")
     @Scripts.Render("~/bundles/angular")
     @RenderSection("scripts", required: false)
 </body>

@@ -3,6 +3,7 @@
       "Name": "Jordan Bluehdorn",
       "ID": 1,
       "Phone": "(808)291-0218",
+      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
               "ID": 1,
@@ -28,6 +29,7 @@
       "Name": "SomeCompany Inc.",
       "ID": 5,
       "Phone": "(417)555-9764",
+      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
               "ID": 8,
@@ -46,6 +48,7 @@
       "Name": "Dale Denton",
       "ID": 28,
       "Phone": "(417)555-9032",
+      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
               "ID": 20,
@@ -64,6 +67,7 @@
       "Name": "Nick Saban",
       "ID": 66,
       "Phone": "(971)555-3181",
+      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
               "ID": 17,
@@ -82,6 +86,7 @@
       "Name": "Joey Freshwater",
       "ID": 873,
       "Phone": "(729)555-8289",
+      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
               "ID": 76,
@@ -100,6 +105,7 @@
       "Name": "SomeCompany Inc.",
       "ID": 5,
       "Phone": "(417)555-9764",
+      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
               "ID": 8,
@@ -118,6 +124,7 @@
       "Name": "Mark Webber",
       "ID": 28,
       "Phone": "(417)555-9032",
+      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
               "ID": 20,
@@ -136,6 +143,7 @@
       "Name": "Nick Saban",
       "ID": 66,
       "Phone": "(971)555-3181",
+      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
               "ID": 17,
@@ -154,6 +162,7 @@
       "Name": "Joey Freshwater",
       "ID": 873,
       "Phone": "(729)555-8289",
+      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
               "ID": 76,

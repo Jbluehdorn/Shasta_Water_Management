@@ -28,5 +28,20 @@ namespace Shasta_Water_Management.Repositories
 
             return customers;
         }
+
+        /// <summary>
+        /// Gets a single customer from the data location
+        /// </summary>
+        /// <param name="id">customer id</param>
+        /// <returns><see cref="Models.Customer"/></returns>
+        public static Customer GetCustomer(string id)
+        {
+            var customer = new Customer();
+
+            var customers = GetCustomers();
+            customer = customers.FirstOrDefault(x => x.ID == id);
+
+            return customer;
+        }
     }
 }
