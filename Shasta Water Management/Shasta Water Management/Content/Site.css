@@ -47,13 +47,12 @@ header {
     Toolbar
   ========================*/
 #toolbar {
-    width: 200px;
     display: block;
     height: 100%;
     background: #333;
     color: white;
     font-size: 1.5em;
-    float: left;
+    padding: 0;
 }
 
 #toolbar ul {
@@ -87,17 +86,14 @@ header {
     background: #bbb;
     position: fixed;
     top: 95px;
-    width: 100%;
     height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .main-content {
-    display: block;
-    width: calc(100% - 200px);
-    height: 100%;
-    vertical-align: top;
-    float: right;
-    overflow: auto;
+    padding: 0;
+    min-height: 100%;
 }
 
 /*Fixes an overflow glitch*/
@@ -281,13 +277,16 @@ editable-field {
 
 .equipment .glyphicon-remove-circle {
     position: absolute;
-    top: 5px;
     right: 10px;
     font-size: 1.7em;
     cursor: pointer;
 }
 
-.equipment .glyphicon-remove-circle:hover {
+.customer-profile .glyphicon-pencil:hover {
+    color: #0C0;
+}
+
+.customer-profile .glyphicon-remove-circle:hover {
     color: #C00;
 }
 
@@ -318,4 +317,11 @@ editable-field {
   pointer-events: none;
   padding: 6px;
   font-size: 1.2em;
+}
+
+.pastDate {
+    margin-left: 5px;
+    padding: 2px;
+    color: white;
+    background: #C00;
 }

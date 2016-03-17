@@ -2,7 +2,8 @@
   {
       "Name": "Jordan Bluehdorn",
       "ID": 1,
-      "Phone": "(808)291-0218",
+    "HomePhone": "(808)291-0218",
+    "CellPhone":  "(222)555-2171",
       "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
@@ -29,7 +30,8 @@
   {
       "Name": "SomeCompany Inc.",
       "ID": 5,
-      "Phone": "(417)555-9764",
+      "HomePhone": "(417)555-9764",
+    "CellPhone":  "(222)555-2171",
       "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
@@ -48,7 +50,8 @@
   {
       "Name": "Dale Denton",
       "ID": 28,
-      "Phone": "(417)555-9032",
+      "HomePhone": "(417)555-9032",
+    "CellPhone":  "(222)555-2171",
       "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
@@ -67,7 +70,8 @@
   {
       "Name": "Nick Saban",
       "ID": 66,
-      "Phone": "(971)555-3181",
+      "HomePhone": "(971)555-3181",
+    "CellPhone":  "(222)555-2171",
       "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
@@ -86,7 +90,8 @@
   {
       "Name": "Joey Freshwater",
       "ID": 873,
-      "Phone": "(729)555-8289",
+      "HomePhone": "(729)555-8289",
+    "CellPhone":  "(222)555-2171",
       "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
@@ -105,7 +110,8 @@
   {
       "Name": "SomeCompany Inc.",
       "ID": 5,
-      "Phone": "(417)555-9764",
+      "HomePhone": "(417)555-9764",
+    "CellPhone":  "(222)555-2171",
       "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
@@ -124,7 +130,8 @@
   {
       "Name": "Mark Webber",
       "ID": 28,
-      "Phone": "(417)555-9032",
+      "HomePhone": "(417)555-9032",
+    "CellPhone":  "(222)555-2171",
       "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
@@ -143,7 +150,8 @@
   {
       "Name": "Nick Saban",
       "ID": 66,
-      "Phone": "(971)555-3181",
+      "HomePhone": "(971)555-3181",
+    "CellPhone":  "(222)555-2171",
       "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {
@@ -163,7 +171,8 @@
   {
       "Name": "Joey Freshwater",
       "ID": 873,
-      "Phone": "(729)555-8289",
+      "HomePhone": "(729)555-8289",
+    "CellPhone":  "(222)555-2171",
       "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
       "Equipment": [
           {

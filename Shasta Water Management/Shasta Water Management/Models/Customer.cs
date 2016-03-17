@@ -9,7 +9,8 @@ namespace Shasta_Water_Management.Models
     {
         public string ID { get; set; }
         public string Name { get; set; }
-        public string Phone { get; set; }
+        public string HomePhone { get; set; }
+        public string CellPhone { get; set; }
         public IEnumerable<Equipment> Equipment { get; set; }
         public DateTime LastServiceDate { get; set; }
         public int ServiceInterval { get; set; }

@@ -1,6 +1,6 @@
 ﻿@model Shasta_Water_Management.Models.Customer
 @{
-    ViewBag.Title = "Search";
+    ViewBag.title = "Search";
 }
 
 <script>
@@ -11,9 +11,13 @@
     <h1>{{customer.Name}} #{{customer.ID}}</h1>
 
     <div class="customer-info-holder">
-        <editable-textarea title="'Address'" field="customer.Address" class="address"></editable-textarea>
-        <editable-field title="'Phone'" field="customer.Phone"></editable-field>
-        <editable-textarea title="'Notes'" field="customer.Notes"></editable-textarea>
+        <editable-textarea header="'Address'" field="customer.Address" class="address"></editable-textarea>
+        <editable-field header="'Home'" field="customer.HomePhone"></editable-field>
+        <editable-field header="'Cell'" field="customer.CellPhone"></editable-field>
+        <editable-textarea header="'Notes'" field="customer.Notes"></editable-textarea>
+        <strong>Last Service Date:</strong> {{customer.LastServiceDate | date: 'shortDate'}} <br />
+        <strong>Service Interval:</strong> {{customer.ServiceInterval / 30}} Months<br />
+        <strong>Next Service Date:</strong><span ng-class="{'pastDate': !withinServiceDate()}">{{customer.NextServiceDate | date: 'shortDate'}}</span>
     </div>
 
     <div class="equipment-holder">
@@ -21,15 +25,12 @@
         <div class="equipment" ng-repeat="equipment in customer.Equipment">
             <span class="glyphicon glyphicon-remove-circle" ng-click="remove(equipment)"></span>
             <h3>{{equipment.Type}} #{{equipment.Serial}}</h3>
-            <editable-field title="'Model Number'" field="equipment.ModelNum"></editable-field>
-            <editable-field title="'Own/Rent'" field="equipment.OwnRent"></editable-field>
-            <editable-textarea title="'Diagnostics'" field="equipment.Diagnostics"></editable-textarea>
+            <editable-field header="'Model Number'" field="equipment.ModelNum"></editable-field>
+            <editable-field header="'Own/Rent'" field="equipment.OwnRent"></editable-field>
+            <editable-textarea header="'Diagnostics'" field="equipment.Diagnostics"></editable-textarea>
         </div>
     </div>
     <div class="service-holder">
-        <strong>Last Service Date:</strong> {{customer.LastServiceDate | date: 'shortDate'}} <br/>
-        <strong>Service Interval:</strong> {{customer.ServiceInterval / 30}} Months<br/>
-        <strong>Next Service Date:</strong> 
     </div>
     <button class="btn btn-success" ng-click="saveCustomer()">Save Changes</button>
     <hr>
