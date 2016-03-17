@@ -10,13 +10,14 @@
 <div ng-controller="profileCtrl" class="customer-profile">
     <h1>{{customer.Name}} #{{customer.ID}}</h1>
 
-    <div class="customer-info-holder">
+    <div class="customer-info-holder col-sm-12">
+        
         <editable-textarea header="'Address'" field="customer.Address" class="address"></editable-textarea>
         <editable-field header="'Home'" field="customer.HomePhone"></editable-field>
         <editable-field header="'Cell'" field="customer.CellPhone"></editable-field>
         <editable-textarea header="'Notes'" field="customer.Notes"></editable-textarea>
-        <strong>Last Service Date:</strong> {{customer.LastServiceDate | date: 'shortDate'}} <br />
-        <strong>Service Interval:</strong> {{customer.ServiceInterval / 30}} Months<br />
+        <strong>Last Service Date:</strong> {{customer.LastServiceDate | date: 'shortDate'}} <br/>
+        <strong>Service Interval:</strong> {{customer.ServiceInterval / 30}} Months<br/>
         <strong>Next Service Date:</strong><span ng-class="{'pastDate': !withinServiceDate()}">{{customer.NextServiceDate | date: 'shortDate'}}</span>
     </div>
 
