@@ -6,28 +6,27 @@ namespace Shasta_Water_Management
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Equipment")]
-    public partial class Equipment
+    [Table("CustEquip")]
+    public partial class CustEquip
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Equipment()
+        public CustEquip()
         {
-            CustEquips = new HashSet<CustEquip>();
+            Customers = new HashSet<Customer>();
         }
 
-        [Key]
-        public long EquipID { get; set; }
-
-        [StringLength(32)]
-        public string Type { get; set; }
+        public long CustEquipID { get; set; }
 
         [StringLength(50)]
-        public string ModelNum { get; set; }
+        public string SerialNum { get; set; }
 
-        [StringLength(50)]
-        public string Name { get; set; }
+        public long? EquipID { get; set; }
+
+        public DateTime? ServiceInterval { get; set; }
+
+        public virtual Equipment Equipment { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CustEquip> CustEquips { get; set; }
+        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

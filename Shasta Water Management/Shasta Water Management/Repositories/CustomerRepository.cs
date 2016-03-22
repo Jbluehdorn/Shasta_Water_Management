@@ -18,7 +18,8 @@ namespace Shasta_Water_Management.Repositories
         {
             var customers = new List<Customer>();
 
-            var path = "C:\\Users\\blueh\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
+            //var path = "C:\\Users\\Hunter\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
+            var path = "C:\\Users\\Hunter\\Source\\Repos\\Shasta\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
 
             using(StreamReader sr = new StreamReader(path))
             {
@@ -39,7 +40,7 @@ namespace Shasta_Water_Management.Repositories
             var customer = new Customer();
 
             var customers = GetCustomers();
-            customer = customers.FirstOrDefault(x => x.ID == id);
+            customer = customers.FirstOrDefault(x => x.CustomerID == id);
 
             return customer;
         }
