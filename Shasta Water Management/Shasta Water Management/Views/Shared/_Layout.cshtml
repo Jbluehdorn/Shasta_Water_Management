@@ -18,13 +18,13 @@
             <h1>Shasta Water Company</h1>
         </a>
     </header>
-    <div class="main col-sm-12">
-        <nav id="toolbar" class="col-sm-2" sw-navigation>
+    <div class="main">
+        <nav id="toolbar" class="col-xs-12 col-sm-2" sw-navigation>
             <ul>
                 <li ng-repeat="category in categories" ng-class="{'active': page === category}" ng-click="changePage(category)">{{category}}</li>
             </ul>
         </nav><!--
-     --><div class="main-content col-sm-10" sw-navigation>
+     --><div class="main-content col-xs-12 col-sm-10" sw-navigation>
             @RenderBody()
         </div>
     </div>

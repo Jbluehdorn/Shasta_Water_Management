@@ -38,5 +38,24 @@ namespace Shasta_Water_Management.Controllers
 
             return View("CustomerProfile", customer);
         }
+
+        [HttpGet]
+        public ActionResult EditCustomer(string id)
+        {
+            var customer = new Customer();
+
+            customer = CustomerRepository.GetCustomer(id);
+            ViewBag.Method = "Edit";
+
+            return View("CustomerForm", customer);
+        }
+
+        [HttpGet]
+        public ActionResult NewCustomer()
+        {
+            ViewBag.Method = "Add";
+
+            return View("CustomerForm");
+        }
     }
 }

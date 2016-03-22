@@ -10,30 +10,58 @@
 <div ng-controller="profileCtrl" class="customer-profile">
     <h1>{{customer.Name}} #{{customer.ID}}</h1>
 
-    <div class="customer-info-holder col-sm-12">
-        
-        <editable-textarea header="'Address'" field="customer.Address" class="address"></editable-textarea>
-        <editable-field header="'Home'" field="customer.HomePhone"></editable-field>
-        <editable-field header="'Cell'" field="customer.CellPhone"></editable-field>
-        <editable-textarea header="'Notes'" field="customer.Notes"></editable-textarea>
-        <strong>Last Service Date:</strong> {{customer.LastServiceDate | date: 'shortDate'}} <br/>
-        <strong>Service Interval:</strong> {{customer.ServiceInterval / 30}} Months<br/>
-        <strong>Next Service Date:</strong><span ng-class="{'pastDate': !withinServiceDate()}">{{customer.NextServiceDate | date: 'shortDate'}}</span>
+    <div class=" container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="customer-info" id="address">
+                    <h3>Address:</h3>
+                    {{customer.Address}} <br />
+                    {{customer.City}}, {{customer.State}} <br />
+                    {{customer.Zip}}
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="customer-info" id="phones">
+                    <h3>Phone:</h3>
+                    <strong>Home:</strong> {{customer.HomePhone}} <br />
+                    <strong>Cell:</strong> {{customer.CellPhone}}
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="customer-info" id="service-dates">
+                    <h3>Service Dates:</h3>
+                    <strong>Last Service Date:</strong> {{customer.LastServiceDate | date: 'shortDate'}} <br />
+                    <strong>Service Interval:</strong> {{customer.ServiceInterval / 30}} Months<br />
+                    <strong>Next Service Date:</strong><span ng-class="{'pastDate': !withinServiceDate()}">{{customer.NextServiceDate | date: 'shortDate'}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="customer-info" id="notes">
+                    <h3>Notes:</h3>
+                    {{customer.Notes}}
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="equipment-holder">
-        <h2>Equipment</h2>
-        <div class="equipment" ng-repeat="equipment in customer.Equipment">
-            <span class="glyphicon glyphicon-remove-circle" ng-click="remove(equipment)"></span>
+    <h2>Equipment</h2>
+    <div class="equipment-holder container">
+        <div class="customer-info col-sm-4" ng-repeat="equipment in customer.Equipment">
+            @*<span class="glyphicon glyphicon-remove-circle" ng-click="remove(equipment)"></span>*@
             <h3>{{equipment.Type}} #{{equipment.Serial}}</h3>
-            <editable-field header="'Model Number'" field="equipment.ModelNum"></editable-field>
+            <strong>Model Number:</strong> {{equipment.ModelNum}} <br/>
+            <strong>Own/Rent:</strong> {{equipment.OwnRent}} <br/>
+            <strong>Diagnostics:</strong> {{equipment.Diagnostics}}
+            @*<editable-field header="'Model Number'" field="equipment.ModelNum"></editable-field>
             <editable-field header="'Own/Rent'" field="equipment.OwnRent"></editable-field>
-            <editable-textarea header="'Diagnostics'" field="equipment.Diagnostics"></editable-textarea>
+            <editable-textarea header="'Diagnostics'" field="equipment.Diagnostics"></editable-textarea>*@
         </div>
     </div>
     <div class="service-holder">
     </div>
-    <button class="btn btn-success" ng-click="saveCustomer()">Save Changes</button>
+    <button class="btn btn-success" ng-click="editCustomer()">Edit Customer</button>
     <hr>
     {{customer}}
 </div>

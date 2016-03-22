@@ -6,16 +6,16 @@
 
 <div class="search" ng-controller="searchCtrl">
     <div class="searchBar">
-        <div class="search-group">
-            <label>Search:</label>
-            <div class="inner-addon">
+        <div class="search-group col-xs-12 col-sm-6">
+            <label class="col-xs-3">Search:</label>
+            <div class="inner-addon col-xs-9">
                 <input class="form-control" type="text" name="search" ng-model="searchTerm" />
                 <span class="glyphicon glyphicon-search"></span>
             </div>
         </div>
-        <div class="search-group">
-            <label>Customers Per Page:</label>
-            <select class="form-control" ng-model="customersPerPage" ng-options="n for n in [5, 10, 25]"></select>
+        <div class="search-group col-xs-6" id="per-page">
+            <label class="col-xs-4">Per Page:</label>
+            <select class="form-control col-xs-8" ng-model="customersPerPage" ng-options="n for n in [5, 10, 25]"></select>
         </div>
     </div>
     <table id="customer-table">
@@ -43,7 +43,7 @@
             <tr ng-repeat="customer in pagedCustomers[currentPage] | filter:searchTerm | orderBy: orderTerm : reverse" ng-click="select(customer)">
                 <td>{{customer.ID}}</td>
                 <td>{{customer.Name}}</td>
-                <td>{{customer.Phone}}</td>
+                <td>{{customer.CellPhone}}</td>
                 <td>{{customer.LastServiceDate | date: 'longDate'}}</td>
             </tr>
         </tbody>

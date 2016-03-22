@@ -16,5 +16,9 @@ namespace Shasta_Water_Management.Models
         public int ServiceInterval { get; set; }
         public string Notes { get; set; }
         public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Zip { get; set; }
+
     }
 }

@@ -4,7 +4,10 @@
       "ID": 1,
     "HomePhone": "(808)291-0218",
     "CellPhone":  "(222)555-2171",
-      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
+    "Address": "6005 S Farm Rd 223",
+    "City": "Rogersville",
+    "State": "MO",
+    "Zip": "65742",
       "Equipment": [
           {
               "ID": 1,
@@ -32,7 +35,10 @@
       "ID": 5,
       "HomePhone": "(417)555-9764",
     "CellPhone":  "(222)555-2171",
-      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
+    "Address": "6005 S Farm Rd 223",
+    "City": "Rogersville",
+    "State": "MO",
+    "Zip": "65742",
       "Equipment": [
           {
               "ID": 8,
@@ -52,7 +58,10 @@
       "ID": 28,
       "HomePhone": "(417)555-9032",
     "CellPhone":  "(222)555-2171",
-      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
+    "Address": "6005 S Farm Rd 223",
+    "City": "Rogersville",
+    "State": "MO",
+    "Zip": "65742",
       "Equipment": [
           {
               "ID": 20,
@@ -72,8 +81,19 @@
       "ID": 66,
       "HomePhone": "(971)555-3181",
     "CellPhone":  "(222)555-2171",
-      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
+    "Address": "6005 S Farm Rd 223",
+    "City": "Rogersville",
+    "State": "MO",
+    "Zip": "65742",
       "Equipment": [
+          {
+              "ID": 17,
+              "Type": "Filter",
+              "Serial": "0983123",
+              "ModelNum": "9873123",
+            "Diagnostics": 150764,
+            "OwnRent":  "Own"
+          },
           {
               "ID": 17,
               "Type": "Filter",
@@ -92,7 +112,10 @@
       "ID": 873,
       "HomePhone": "(729)555-8289",
     "CellPhone":  "(222)555-2171",
-      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
+    "Address": "6005 S Farm Rd 223",
+    "City": "Rogersville",
+    "State": "MO",
+    "Zip": "65742",
       "Equipment": [
           {
               "ID": 76,
@@ -112,7 +135,10 @@
       "ID": 5,
       "HomePhone": "(417)555-9764",
     "CellPhone":  "(222)555-2171",
-      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
+    "Address": "6005 S Farm Rd 223",
+    "City": "Rogersville",
+    "State": "MO",
+    "Zip": "65742",
       "Equipment": [
           {
               "ID": 8,
@@ -132,7 +158,10 @@
       "ID": 28,
       "HomePhone": "(417)555-9032",
     "CellPhone":  "(222)555-2171",
-      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
+    "Address": "6005 S Farm Rd 223",
+    "City": "Rogersville",
+    "State": "MO",
+    "Zip": "65742",
       "Equipment": [
           {
               "ID": 20,
@@ -152,7 +181,10 @@
       "ID": 66,
       "HomePhone": "(971)555-3181",
     "CellPhone":  "(222)555-2171",
-      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
+    "Address": "6005 S Farm Rd 223",
+    "City": "Rogersville",
+    "State": "MO",
+    "Zip": "65742",
       "Equipment": [
           {
               "ID": 17,
@@ -173,7 +205,10 @@
       "ID": 873,
       "HomePhone": "(729)555-8289",
     "CellPhone":  "(222)555-2171",
-      "Address": "6005 S Farm Rd 223\nRogersville, MO\n65742",
+    "Address": "6005 S Farm Rd 223",
+    "City": "Rogersville",
+    "State": "MO",
+    "Zip": "65742",
       "Equipment": [
           {
               "ID": 76,

@@ -1,0 +1,15 @@
+﻿@model Shasta_Water_Management.Models.Customer
+@{
+    ViewBag.Title = "Add";
+}
+
+<script>
+    var customer = @Html.Raw(Json.Encode(Model));
+    var method = @Html.Raw(Json.Encode(ViewBag.Method));
+    console.log(method);
+</script>
+
+<div ng-controller="formCtrl" class="employee-form">
+    <h1><span ng-if="customer">Edit </span><span ng-if="!customer">Add </span>Customer</h1>
+    {{customer}}
+</div>

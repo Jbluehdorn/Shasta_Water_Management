@@ -197,7 +197,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Scripts\sw-app.js" />
+    <Content Include="Scripts\sw-customerform.js" />
     <Content Include="Scripts\sw-profile.js" />
     <Content Include="Scripts\sw-search.js" />
     <Content Include="Scripts\sweetalert.min.js" />
@@ -223,6 +225,7 @@
     <Content Include="Views\Home\_ActionDefinitionUrls.cshtml" />
     <Content Include="Views\Home\_ConstantDefinitions.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Customer\CustomerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

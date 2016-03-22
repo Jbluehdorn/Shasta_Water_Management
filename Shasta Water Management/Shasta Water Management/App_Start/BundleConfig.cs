@@ -28,12 +28,13 @@ namespace Shasta_Water_Management
                     "~/Scripts/angular-route.min.js",
                     "~/Scripts/sw-app.js",
                     "~/Scripts/sw-search.js",
-                    "~/Scripts/sw-profile.js"
+                    "~/Scripts/sw-profile.js",
+                    "~/Scripts/sw-customerform.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/site").Include(
-                "~/Scripts/sweetalert.min.js"
-                ));
+                "~/Scripts/sweetalert.min.js",
+                "~/Scripts/site.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
