@@ -1,3 +1,5 @@
+using SQLite.CodeFirst;
+
 namespace Shasta_Water_Management
 {
     using System;
@@ -19,6 +21,9 @@ namespace Shasta_Water_Management
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<Model1>(modelBuilder);
+            Database.SetInitializer(sqliteConnectionInitializer);
+
             modelBuilder.Entity<CustEquip>()
                 .Property(e => e.SerialNum)
                 .IsUnicode(false);

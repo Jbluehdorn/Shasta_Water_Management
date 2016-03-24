@@ -23,5 +23,14 @@ namespace Shasta_Water_Management.Controllers
         {
             return View();
         }
+
+        public ActionResult Test()
+        {
+            var tester = new Test.Test();
+
+            var customers = tester.Get();
+
+            return Json(customers, JsonRequestBehavior.AllowGet);
+        }
     }
 }

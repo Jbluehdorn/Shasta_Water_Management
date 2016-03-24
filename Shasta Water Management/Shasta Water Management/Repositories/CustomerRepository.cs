@@ -13,18 +13,25 @@ namespace Shasta_Water_Management.Repositories
         /// <summary>
         /// Gets all customers from the data location
         /// </summary>
-        /// <returns>List of <see cref="Models.Customer"/></returns>
+        /// <returns>List of <see cref="Customer"/></returns>
         public static IEnumerable<Customer> GetCustomers()
         {
             var customers = new List<Customer>();
 
             //var path = "C:\\Users\\Hunter\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
-            var path = "C:\\Users\\Hunter\\Source\\Repos\\Shasta\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
+            //var path = "C:\\Users\\Hunter\\Source\\Repos\\Shasta\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
 
-            using(StreamReader sr = new StreamReader(path))
+            //using(StreamReader sr = new StreamReader(path))
+            //{
+            //    string json = sr.ReadToEnd();
+            //    customers = JsonConvert.DeserializeObject<List<Customer>>(json);
+            //}
+
+            using (var dbcontext = new Model1())
             {
-                string json = sr.ReadToEnd();
-                customers = JsonConvert.DeserializeObject<List<Customer>>(json);
+                var query = from c in dbcontext.Customers
+                            select c;
+                customers = query.ToList();
             }
 
             return customers;
@@ -34,7 +41,7 @@ namespace Shasta_Water_Management.Repositories
         /// Gets a single customer from the data location
         /// </summary>
         /// <param name="id">customer id</param>
-        /// <returns><see cref="Models.Customer"/></returns>
+        /// <returns><see cref="Customer"/></returns>
         public static Customer GetCustomer(string id)
         {
             var customer = new Customer();
