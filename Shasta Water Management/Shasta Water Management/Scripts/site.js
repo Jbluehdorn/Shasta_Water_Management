@@ -1,4 +1,7 @@
-﻿
+﻿$(window).resize(function() {
+    ResizeToolbar();
+});
+
 $(window).scroll(function () {
     ResizeToolbar();
 });
@@ -11,5 +14,4 @@ function ResizeToolbar() {
     } else {
         $('#toolbar').height('auto');
     }
-    console.log('resized');
 }

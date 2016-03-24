@@ -18,21 +18,21 @@ namespace Shasta_Water_Management.Repositories
         {
             var customers = new List<Customer>();
 
-            //var path = "C:\\Users\\Hunter\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
+            var path = "C:\\Users\\blueh\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
             //var path = "C:\\Users\\Hunter\\Source\\Repos\\Shasta\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
 
-            //using(StreamReader sr = new StreamReader(path))
-            //{
-            //    string json = sr.ReadToEnd();
-            //    customers = JsonConvert.DeserializeObject<List<Customer>>(json);
-            //}
-
-            using (var dbcontext = new Model1())
+            using (StreamReader sr = new StreamReader(path))
             {
-                var query = from c in dbcontext.Customers
-                            select c;
-                customers = query.ToList();
+                string json = sr.ReadToEnd();
+                customers = JsonConvert.DeserializeObject<List<Customer>>(json);
             }
+
+            //using (var dbcontext = new Model1())
+            //{
+            //    var query = from c in dbcontext.Customers
+            //                select c;
+            //    customers = query.ToList();
+            //}
 
             return customers;
         }

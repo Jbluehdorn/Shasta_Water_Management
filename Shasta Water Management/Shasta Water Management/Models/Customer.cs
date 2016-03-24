@@ -37,5 +37,10 @@ namespace Shasta_Water_Management
         public string Notes { get; set; }
 
         public virtual CustEquip CustEquip { get; set; }
+
+        public IEnumerable<Equipment> Equipment { get; set; }
+        public DateTime? LastServiceDate { get; set; }
+
+        public int ServiceInterval { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿[
   {
       "Name": "Jordan Bluehdorn",
-      "ID": 1,
+      "CustomerID": 1,
     "HomePhone": "(808)291-0218",
     "CellPhone":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
@@ -32,7 +32,7 @@
   },
   {
       "Name": "SomeCompany Inc.",
-      "ID": 5,
+      "CustomerID": 5,
       "HomePhone": "(417)555-9764",
     "CellPhone":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
@@ -55,7 +55,7 @@
   },
   {
       "Name": "Dale Denton",
-      "ID": 28,
+      "CustomerID": 28,
       "HomePhone": "(417)555-9032",
     "CellPhone":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
@@ -78,7 +78,7 @@
   },
   {
       "Name": "Nick Saban",
-      "ID": 66,
+      "CustomerID": 66,
       "HomePhone": "(971)555-3181",
     "CellPhone":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
@@ -95,7 +95,7 @@
             "OwnRent":  "Own"
           },
           {
-              "ID": 17,
+              "CustomerID": 17,
               "Type": "Filter",
               "Serial": "0983123",
               "ModelNum": "9873123",
@@ -109,7 +109,7 @@
   },
   {
       "Name": "Joey Freshwater",
-      "ID": 873,
+      "CustomerID": 873,
       "HomePhone": "(729)555-8289",
     "CellPhone":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
@@ -132,7 +132,7 @@
   },
   {
       "Name": "SomeCompany Inc.",
-      "ID": 5,
+      "CustomerID": 5,
       "HomePhone": "(417)555-9764",
     "CellPhone":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
@@ -155,7 +155,7 @@
   },
   {
       "Name": "Mark Webber",
-      "ID": 28,
+      "CustomerID": 28,
       "HomePhone": "(417)555-9032",
     "CellPhone":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
@@ -178,7 +178,7 @@
   },
   {
       "Name": "Nick Saban",
-      "ID": 66,
+      "CustomerID": 66,
       "HomePhone": "(971)555-3181",
     "CellPhone":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
@@ -202,7 +202,7 @@
   },
   {
       "Name": "Joey Freshwater",
-      "ID": 873,
+      "CustomerID": 873,
       "HomePhone": "(729)555-8289",
     "CellPhone":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",

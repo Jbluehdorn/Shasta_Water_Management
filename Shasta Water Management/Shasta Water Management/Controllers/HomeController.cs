@@ -26,9 +26,7 @@ namespace Shasta_Water_Management.Controllers
 
         public ActionResult Test()
         {
-            var tester = new Test.Test();
-
-            var customers = tester.Get();
+            var customers = CustomerRepository.GetCustomers();
 
             return Json(customers, JsonRequestBehavior.AllowGet);
         }
