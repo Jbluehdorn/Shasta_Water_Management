@@ -15,14 +15,14 @@ namespace Shasta_Water_Management
             Customers = new HashSet<Customer>();
         }
 
-        public long CustEquipID { get; set; }
+        public int CustEquipID { get; set; }
 
         [StringLength(50)]
         public string SerialNum { get; set; }
 
-        public long? EquipID { get; set; }
+        public int EquipID { get; set; }
 
-        public DateTime? ServiceInterval { get; set; }
+        public int ServiceInterval { get; set; }
 
         public virtual Equipment Equipment { get; set; }
 

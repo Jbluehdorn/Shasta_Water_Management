@@ -9,9 +9,9 @@ namespace Shasta_Water_Management
     public partial class Service
     {
         [Key]
-        public long TripID { get; set; }
+        public int TripID { get; set; }
 
-        public long? CustomerID { get; set; }
+        public int CustomerID { get; set; }
 
         [StringLength(2147483647)]
         public string StartLoc { get; set; }

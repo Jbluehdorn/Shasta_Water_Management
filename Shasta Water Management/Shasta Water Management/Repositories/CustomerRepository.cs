@@ -45,9 +45,14 @@ namespace Shasta_Water_Management.Repositories
         public static Customer GetCustomer(string id)
         {
             var customer = new Customer();
-
+   
             var customers = GetCustomers();
-            customer = customers.FirstOrDefault(x => x.CustomerID == id);
+            //may need to change this
+            customer = customers.FirstOrDefault(x => x.CustomerID == Convert.ToInt32(id));
+
+
+            //didn't work unless ID was string
+            //customer = customers.FirstOrDefault(x => x.CustomerID == id);
 
             return customer;
         }
