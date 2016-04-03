@@ -9,7 +9,7 @@ namespace Shasta_Water_Management
     [Table("Customer")]
     public partial class Customer
     {
-        public string CustomerID { get; set; }
+        public int CustomerID { get; set; }
 
         [StringLength(32)]
         public string Name { get; set; }
@@ -20,18 +20,17 @@ namespace Shasta_Water_Management
         [StringLength(15)]
         public string HomePhoneNum { get; set; }
 
-        [StringLength(50)]
+        [StringLength(100)]
         public string Address { get; set; }
 
-        [StringLength(2147483647)]
+        [StringLength(50)]
         public string City { get; set; }
 
-        [StringLength(2147483647)]
+        [StringLength(10)]
         public string Zip { get; set; }
 
-        public bool? Owner { get; set; }
-
-        public int? CustEquipID { get; set; }
+        [StringLength(5)]
+        public string RentOwn { get; set; }
 
         [StringLength(500)]
         public string Notes { get; set; }
@@ -39,6 +38,7 @@ namespace Shasta_Water_Management
         public virtual CustEquip CustEquip { get; set; }
 
         public IEnumerable<Equipment> Equipment { get; set; }
+
         public DateTime? LastServiceDate { get; set; }
 
         public int ServiceInterval { get; set; }

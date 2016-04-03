@@ -5,6 +5,7 @@ using System.Web;
 using System.IO;
 using Newtonsoft.Json;
 using Shasta_Water_Management.Models;
+using SQLite;
 
 namespace Shasta_Water_Management.Repositories
 {
@@ -16,16 +17,12 @@ namespace Shasta_Water_Management.Repositories
         /// <returns>List of <see cref="Customer"/></returns>
         public static IEnumerable<Customer> GetCustomers()
         {
-            var customers = new List<Customer>();
+            var db = new SQLiteConnection("C:\\Users\\Hunter\\Source\\Repos\\Shasta\\Shasta Water Management\\Shasta Water Management\\Data Access\\Shasta.db");
+            //var db = new SQLiteConnection(Path.GetFullPath("\\Shasta Water Management\\Data Access\\Shasta.db"));
 
-            var path = "C:\\Users\\blueh\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
-            //var path = "C:\\Users\\Hunter\\Source\\Repos\\Shasta\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json";
+            IEnumerable<Customer> Customers = db.Table<Customer>();
 
-            using (StreamReader sr = new StreamReader(path))
-            {
-                string json = sr.ReadToEnd();
-                customers = JsonConvert.DeserializeObject<List<Customer>>(json);
-            }
+            
 
             //using (var dbcontext = new Model1())
             //{
@@ -34,7 +31,10 @@ namespace Shasta_Water_Management.Repositories
             //    customers = query.ToList();
             //}
 
-            return customers;
+
+
+
+            return Customers;
         }
 
         /// <summary>
@@ -45,9 +45,14 @@ namespace Shasta_Water_Management.Repositories
         public static Customer GetCustomer(string id)
         {
             var customer = new Customer();
-
+   
             var customers = GetCustomers();
-            customer = customers.FirstOrDefault(x => x.CustomerID == id);
+            //may need to change this
+            customer = customers.FirstOrDefault(x => x.CustomerID == Convert.ToInt32(id));
+
+
+            //didn't work unless ID was string
+            //customer = customers.FirstOrDefault(x => x.CustomerID == id);
 
             return customer;
         }
