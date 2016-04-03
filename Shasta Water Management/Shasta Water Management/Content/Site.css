@@ -314,6 +314,44 @@ header {
 }
 
 /*============================
+    Directions
+  ============================*/
+#mapContainer {
+    height: 700px;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+}
+
+#mapControls {
+    height: 20%;
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: initial;
+}
+
+#mapControls .form-group {
+    margin-bottom: 0;
+}
+
+#steps {
+    height: 80%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/*============================
         Misc.
   ============================*/
 .inner-addon {

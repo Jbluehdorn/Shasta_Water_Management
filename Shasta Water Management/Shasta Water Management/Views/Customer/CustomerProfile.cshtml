@@ -8,7 +8,7 @@
 </script>
 
 <div ng-controller="profileCtrl" class="customer-profile">
-    <h1>{{customer.Name}} #{{customer.ID}}</h1>
+    <h1>{{customer.Name}} #{{customer.CustomerID}}</h1>
 
     <div class=" container">
         <div class="row">
@@ -23,8 +23,8 @@
             <div class="col-sm-3">
                 <div class="customer-info" id="phones">
                     <h3>Phone:</h3>
-                    <strong>Home:</strong> {{customer.HomePhone}} <br />
-                    <strong>Cell:</strong> {{customer.CellPhone}}
+                    <strong>Home:</strong> {{customer.HomePhoneNum}} <br />
+                    <strong>Cell:</strong> {{customer.CellPhoneNum}}
                 </div>
             </div>
             <div class="col-sm-3">

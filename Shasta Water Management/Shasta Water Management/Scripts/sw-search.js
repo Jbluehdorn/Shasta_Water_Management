@@ -73,11 +73,11 @@
 
                 $scope.customers.forEach(function (customer) {
                     customer.CustomerID = parseInt(customer.CustomerID);
-                    //customer.LastServiceDate = new Date(parseInt(customer.LastServiceDate.substr(6)));
-                    //customer.serviceDateFilteredLong = $filter('date')(customer.LastServiceDate, 'longDate');
-                    //customer.serviceDateFilteredShort = $filter('date')(customer.LastServiceDate, 'shortDate');
-                    //customer.serviceDateFilteredMed = $filter('date')(customer.LastServiceDate, 'mediumDate');
-                    //customer.serviceDateFilteredNormal = $filter('date')(customer.LastServiceDate, 'MM/dd/yy');
+                    customer.LastServiceDate = new Date(parseInt(customer.LastServiceDate.substr(6)));
+                    customer.serviceDateFilteredLong = $filter('date')(customer.LastServiceDate, 'longDate');
+                    customer.serviceDateFilteredShort = $filter('date')(customer.LastServiceDate, 'shortDate');
+                    customer.serviceDateFilteredMed = $filter('date')(customer.LastServiceDate, 'mediumDate');
+                    customer.serviceDateFilteredNormal = $filter('date')(customer.LastServiceDate, 'MM/dd/yy');
                 });
 
                 $scope.updateCustomers($scope.customers);
@@ -97,6 +97,6 @@
         }
 
         $scope.select = function (customer) {
-            window.location = window.location + '/' + customer.ID;
+            window.location = window.location + '/' + customer.CustomerID;
         }
     }]);

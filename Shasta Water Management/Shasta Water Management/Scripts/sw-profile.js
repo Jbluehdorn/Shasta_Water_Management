@@ -1,6 +1,7 @@
 ﻿angular.module('customer-profile', [])
     .controller('profileCtrl', ['$scope', function ($scope) {
         $scope.customer = customer;
+        console.log($scope.customer.Equipment);
         $scope.customer.LastServiceDate = new Date(parseInt($scope.customer.LastServiceDate.substr(6)));
 
         //Prevents issues with setting the date directly
