@@ -2,8 +2,8 @@
   {
       "Name": "Jordan Bluehdorn",
       "CustomerID": 1,
-    "HomePhone": "(808)291-0218",
-    "CellPhone":  "(222)555-2171",
+    "HomePhoneNum": "(808)291-0218",
+    "CellPhoneNum":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
     "City": "Rogersville",
     "State": "MO",
@@ -11,19 +11,19 @@
       "Equipment": [
           {
               "ID": 1,
-              "Type": "Machine",
+              "Name": "Machine",
               "Serial": "2012",
               "ModelNum": "ABD-123",
             "Diagnostics": 130000,
-                "OwnRent":  "Rent"
+                "Type":  "Rent"
           },
           {
               "ID": 2,
-              "Type": "Machine",
+              "Name": "Machine",
               "Serial": "22038",
               "ModelNum": "ABD-123",
             "Diagnostics": 149780,
-            "OwnRent": "Own"
+            "Type": "Own"
           }
       ],
       "LastServiceDate": "/Date(1347992529530)/",
@@ -33,8 +33,8 @@
   {
       "Name": "SomeCompany Inc.",
       "CustomerID": 5,
-      "HomePhone": "(417)555-9764",
-    "CellPhone":  "(222)555-2171",
+      "HomePhoneNum": "(417)555-9764",
+    "CellPhoneNum":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
     "City": "Rogersville",
     "State": "MO",
@@ -42,11 +42,11 @@
       "Equipment": [
           {
               "ID": 8,
-              "Type": "Machine",
+              "Name": "Machine",
               "Serial": "2012",
               "ModelNum": "ABD-123",
             "Diagnostics": 130000,
-            "OwnRent": "Own"
+            "Type": "Own"
           }
       ],
       "LastServiceDate": "/Date(1347992529530)/",
@@ -56,8 +56,8 @@
   {
       "Name": "Dale Denton",
       "CustomerID": 28,
-      "HomePhone": "(417)555-9032",
-    "CellPhone":  "(222)555-2171",
+      "HomePhoneNum": "(417)555-9032",
+    "CellPhoneNum":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
     "City": "Rogersville",
     "State": "MO",
@@ -65,11 +65,11 @@
       "Equipment": [
           {
               "ID": 20,
-              "Type": "Laundry",
+              "Name": "Laundry",
               "Serial": "B1D-FA3",
               "ModelNum": "Part",
             "Diagnostics": 7878,
-            "OwnRent":  "Own"
+            "Type":  "Own"
           }
       ],
       "LastServiceDate": "/Date(1398492529530)/",
@@ -79,8 +79,8 @@
   {
       "Name": "Nick Saban",
       "CustomerID": 66,
-      "HomePhone": "(971)555-3181",
-    "CellPhone":  "(222)555-2171",
+      "HomePhoneNum": "(971)555-3181",
+    "CellPhoneNum":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
     "City": "Rogersville",
     "State": "MO",
@@ -88,19 +88,19 @@
       "Equipment": [
           {
               "ID": 17,
-              "Type": "Filter",
+              "Name": "Filter",
               "Serial": "0983123",
               "ModelNum": "9873123",
             "Diagnostics": 150764,
-            "OwnRent":  "Own"
+            "Type":  "Own"
           },
           {
               "CustomerID": 17,
-              "Type": "Filter",
+              "Name": "Filter",
               "Serial": "0983123",
               "ModelNum": "9873123",
             "Diagnostics": 150764,
-            "OwnRent":  "Own"
+            "Type":  "Own"
           }
       ],
       "LastServiceDate": "/Date(1347912529530)/",
@@ -110,8 +110,8 @@
   {
       "Name": "Joey Freshwater",
       "CustomerID": 873,
-      "HomePhone": "(729)555-8289",
-    "CellPhone":  "(222)555-2171",
+      "HomePhoneNum": "(729)555-8289",
+    "CellPhoneNum":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
     "City": "Rogersville",
     "State": "MO",
@@ -119,11 +119,11 @@
       "Equipment": [
           {
               "ID": 76,
-              "Type": "Vehicle",
+              "Name": "Vehicle",
               "Serial": "s3r1@l",
               "ModelNum": "561-123",
             "Diagnostics": 7548,
-            "OwnRent": "Rent"
+            "Type": "Rent"
           }
       ],
       "LastServiceDate": "/Date(1347189529530)/",
@@ -133,8 +133,8 @@
   {
       "Name": "SomeCompany Inc.",
       "CustomerID": 5,
-      "HomePhone": "(417)555-9764",
-    "CellPhone":  "(222)555-2171",
+      "HomePhoneNum": "(417)555-9764",
+    "CellPhoneNum":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
     "City": "Rogersville",
     "State": "MO",
@@ -142,11 +142,11 @@
       "Equipment": [
           {
               "ID": 8,
-              "Type": "Machine",
+              "Name": "Machine",
               "Serial": "2012",
               "ModelNum": "ABD-123",
             "Diagnostics": 130000,
-            "OwnRent":  "Rent"
+            "Type":  "Rent"
           }
       ],
       "LastServiceDate": "/Date(1347992529530)/",
@@ -156,8 +156,8 @@
   {
       "Name": "Mark Webber",
       "CustomerID": 28,
-      "HomePhone": "(417)555-9032",
-    "CellPhone":  "(222)555-2171",
+      "HomePhoneNum": "(417)555-9032",
+    "CellPhoneNum":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
     "City": "Rogersville",
     "State": "MO",
@@ -165,11 +165,11 @@
       "Equipment": [
           {
               "ID": 20,
-              "Type": "Laundry",
+              "Name": "Laundry",
               "Serial": "B1D-FA3",
               "ModelNum": "Part",
             "Diagnostics": 7878,
-            "OwnRent": "Own"
+            "Type": "Own"
           }
       ],
       "LastServiceDate": "/Date(1118492529530)/",
@@ -179,8 +179,8 @@
   {
       "Name": "Nick Saban",
       "CustomerID": 66,
-      "HomePhone": "(971)555-3181",
-    "CellPhone":  "(222)555-2171",
+      "HomePhoneNum": "(971)555-3181",
+    "CellPhoneNum":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
     "City": "Rogersville",
     "State": "MO",
@@ -188,23 +188,23 @@
       "Equipment": [
           {
               "ID": 17,
-              "Type": "Filter",
+              "Name": "Filter",
               "Serial": "0983123",
               "ModelNum": "9873123",
             "Diagnostics": 150764,
-                "OwnRent":  "Rent"
+                "Type":  "Rent"
           }
       ],
       "LastServiceDate": "/Date(1347912529530)/",
-      "OwnRent": "Rent",
+      "Type": "Rent",
       "ServiceInterval": 180,
       "Notes": "This is some Freshwater"
   },
   {
       "Name": "Joey Freshwater",
       "CustomerID": 873,
-      "HomePhone": "(729)555-8289",
-    "CellPhone":  "(222)555-2171",
+      "HomePhoneNum": "(729)555-8289",
+    "CellPhoneNum":  "(222)555-2171",
     "Address": "6005 S Farm Rd 223",
     "City": "Rogersville",
     "State": "MO",
@@ -212,15 +212,15 @@
       "Equipment": [
           {
               "ID": 76,
-              "Type": "Vehicle",
+              "Name": "Vehicle",
               "Serial": "s3r1@l",
               "ModelNum": "561-123",
             "Diagnostics": 7548,
-            "OwnRent":  "Own"
+            "Type":  "Own"
           }
       ],
       "LastServiceDate": "/Date(1347189529530)/",
-      "OwnRent": "Own",
+      "Type": "Own",
       "ServiceInterval": 150,
       "Notes": "This guy is a jerk"
   }

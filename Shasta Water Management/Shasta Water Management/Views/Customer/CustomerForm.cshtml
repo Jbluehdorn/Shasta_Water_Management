@@ -1,4 +1,4 @@
-﻿@model Shasta_Water_Management.Models.Customer
+﻿@model Customer
 @{
     ViewBag.Title = "Add";
 }
@@ -6,10 +6,34 @@
 <script>
     var customer = @Html.Raw(Json.Encode(Model));
     var method = @Html.Raw(Json.Encode(ViewBag.Method));
-    console.log(method);
 </script>
 
-<div ng-controller="formCtrl" class="employee-form">
-    <h1><span ng-if="customer">Edit </span><span ng-if="!customer">Add </span>Customer</h1>
-    {{customer}}
+<div ng-controller="formCtrl" id="employee-form">
+    <div class="container">
+        <h1>
+            <span ng-if="customer">Edit </span><span ng-if="!customer">Add </span>Customer
+        </h1>
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div class="form-group col-xs-6">
+                    <label class="control-label">Name:</label>
+                    <input type="text" name="Name" class="form-control" ng-model="customer.Name"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-6">
+                    <label class="control-label">Cell Phone:</label>
+                    <input type="text" name="CellPhoneNum" class="form-control" ng-model="customer.CellPhoneNum"/>
+                </div>
+                <div class="form-group col-xs-6">
+                    <label class="control-label">Home Phone:</label>
+                    <input type="text" name="HomePhoneNum" class="form-control" ng-model="customer.HomePhoneNum"/>
+                </div>
+            </div>
+        }
+
+        <hr/>
+        {{customer}}
+    </div>
 </div>

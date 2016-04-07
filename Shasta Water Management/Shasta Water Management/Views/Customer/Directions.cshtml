@@ -1,0 +1,42 @@
+﻿<script>
+    var customer = @Html.Raw(Json.Encode(ViewBag.Customer));
+    var defaultAddress = @Html.Raw(Json.Encode(ViewBag.DefaultAddress));
+</script>
+<div ng-controller="DirectionCtrl" id="mapContainer">
+    <!--GOOGLE MAP-->
+    <div id="map"></div>
+    <!--CONTROLS-->
+    <div class="container" id="mapControls">
+        <div class="form-group col-xs-5">
+            <label class="control-label">Start Address:</label>
+            <textarea class="form-control" ng-model="UserAddress"></textarea>
+        </div>
+        <div class="form-group col-xs-5">
+            <label class="control-label">End Address:</label>
+            <textarea class="form-control" ng-model="CustomerAddress"></textarea>
+        </div>
+        <button class="btn btn-primary col-xs-2" ng-click="GetDirections()">Go!</button>
+    </div>
+    <!--DIRECTIONS TO LOCATION-->
+    <div class="container" id="steps" ng-if="path.length">
+        <div ng-repeat="step in path">{{$index + 1}}. <span ng-bind-html="step.instructions"></span></div>
+    </div>
+</div>
+<script>
+    var map;
+    var directionsDisplay;
+    var directionsService;
+
+    //Initializes the google maps service
+    //Then sets the maps location to the middle of Springfield
+    function initMap() {
+        directionsService = new google.maps.DirectionsService();
+        directionsDisplay = new google.maps.DirectionsRenderer();
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: 37.216065, lng: -93.282772 },
+            zoom: 15
+        });
+        directionsDisplay.setMap(map);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOp0q7wdWyuYZ_O6Vnt_PAdcebPgt9dHg&callback=initMap"></script>

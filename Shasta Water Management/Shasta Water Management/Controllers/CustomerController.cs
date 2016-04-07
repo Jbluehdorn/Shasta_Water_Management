@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Shasta_Water_Management.Models;
+using Shasta_Water_Management.Properties;
 using Shasta_Water_Management.Repositories;
 
 namespace Shasta_Water_Management.Controllers
@@ -37,6 +38,25 @@ namespace Shasta_Water_Management.Controllers
             customer = CustomerRepository.GetCustomer(id);
 
             return View("CustomerProfile", customer);
+        }
+
+        /// <summary>
+        /// Returns the directions page
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Directions(string id)
+        {
+            if (!string.IsNullOrEmpty(id))
+            {
+                var customer = CustomerRepository.GetCustomer(id);
+                ViewBag.Customer = customer;
+            }
+
+            ViewBag.DefaultAddress = Settings.Default.DefaultAddress;
+
+            return View("Directions");
         }
 
         [HttpGet]

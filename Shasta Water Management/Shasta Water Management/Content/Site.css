@@ -84,6 +84,11 @@ header {
     background: #666;
 }
 
+#toolbar li a {
+    color: white;
+    text-decoration: none;
+}
+
 /*=========================
     Main
   =========================*/
@@ -311,6 +316,44 @@ header {
 
 .equipment h3 {
     margin-top: 0;
+}
+
+/*============================
+    Directions
+  ============================*/
+#mapContainer {
+    height: 700px;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+}
+
+#map {
+    height: 100%;
+}
+
+#mapControls {
+    height: 20%;
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+}
+
+#mapControls .form-group {
+    margin-bottom: 0;
+}
+
+#steps {
+    height: 80%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 /*============================
