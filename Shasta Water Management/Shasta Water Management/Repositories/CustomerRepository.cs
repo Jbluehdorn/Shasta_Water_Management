@@ -17,22 +17,16 @@ namespace Shasta_Water_Management.Repositories
         /// <returns>List of <see cref="Customer"/></returns>
         public static IEnumerable<Customer> GetCustomers()
         {
-            var db = new SQLiteConnection("C:\\Users\\Hunter\\Source\\Repos\\Shasta\\Shasta Water Management\\Shasta Water Management\\Data Access\\Shasta.db");
-            //var db = new SQLiteConnection(Path.GetFullPath("\\Shasta Water Management\\Data Access\\Shasta.db"));
+            IEnumerable<Customer> Customers = new List<Customer>();
+            //var db = new SQLiteConnection("C:\\Users\\blueh\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Data Access\\Shasta.db");
+            ////var db = new SQLiteConnection(Path.GetFullPath("\\Shasta Water Management\\Data Access\\Shasta.db"));
 
-            IEnumerable<Customer> Customers = db.Table<Customer>();
+            //IEnumerable<Customer> Customers = db.Table<Customer>();
 
-            
-
-            //using (var dbcontext = new Model1())
-            //{
-            //    var query = from c in dbcontext.Customers
-            //                select c;
-            //    customers = query.ToList();
-            //}
-
-
-
+            using (var sr = new StreamReader("C:\\Users\\blueh\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json"))
+            {
+                Customers = JsonConvert.DeserializeObject<List<Customer>>(sr.ReadToEnd());
+            }
 
             return Customers;
         }

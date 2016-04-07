@@ -61,7 +61,15 @@
     </div>
     <div class="service-holder">
     </div>
-    <button class="btn btn-success" ng-click="editCustomer()">Edit Customer</button>
+    <div class="container-fluid">
+        <div class="row">
+            <button class="btn btn-success" ng-click="editCustomer()">Edit Customer</button>
+            @using (Html.BeginForm("Directions", "Customer", FormMethod.Get)) {
+                <input type="hidden" name="id" ng-value="customer.CustomerID"/>
+                <button type="submit" class="btn btn-primary">Get Directions</button>
+            }
+        </div>
+    </div>
     <hr>
     {{customer}}
 </div>

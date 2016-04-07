@@ -15,7 +15,7 @@
               "Serial": "2012",
               "ModelNum": "ABD-123",
             "Diagnostics": 130000,
-                "OwnRent":  "Rent"
+                "Type":  "Rent"
           },
           {
               "ID": 2,
@@ -23,7 +23,7 @@
               "Serial": "22038",
               "ModelNum": "ABD-123",
             "Diagnostics": 149780,
-            "OwnRent": "Own"
+            "Type": "Own"
           }
       ],
       "LastServiceDate": "/Date(1347992529530)/",
@@ -46,7 +46,7 @@
               "Serial": "2012",
               "ModelNum": "ABD-123",
             "Diagnostics": 130000,
-            "OwnRent": "Own"
+            "Type": "Own"
           }
       ],
       "LastServiceDate": "/Date(1347992529530)/",
@@ -69,7 +69,7 @@
               "Serial": "B1D-FA3",
               "ModelNum": "Part",
             "Diagnostics": 7878,
-            "OwnRent":  "Own"
+            "Type":  "Own"
           }
       ],
       "LastServiceDate": "/Date(1398492529530)/",
@@ -92,7 +92,7 @@
               "Serial": "0983123",
               "ModelNum": "9873123",
             "Diagnostics": 150764,
-            "OwnRent":  "Own"
+            "Type":  "Own"
           },
           {
               "CustomerID": 17,
@@ -100,7 +100,7 @@
               "Serial": "0983123",
               "ModelNum": "9873123",
             "Diagnostics": 150764,
-            "OwnRent":  "Own"
+            "Type":  "Own"
           }
       ],
       "LastServiceDate": "/Date(1347912529530)/",
@@ -123,7 +123,7 @@
               "Serial": "s3r1@l",
               "ModelNum": "561-123",
             "Diagnostics": 7548,
-            "OwnRent": "Rent"
+            "Type": "Rent"
           }
       ],
       "LastServiceDate": "/Date(1347189529530)/",
@@ -146,7 +146,7 @@
               "Serial": "2012",
               "ModelNum": "ABD-123",
             "Diagnostics": 130000,
-            "OwnRent":  "Rent"
+            "Type":  "Rent"
           }
       ],
       "LastServiceDate": "/Date(1347992529530)/",
@@ -169,7 +169,7 @@
               "Serial": "B1D-FA3",
               "ModelNum": "Part",
             "Diagnostics": 7878,
-            "OwnRent": "Own"
+            "Type": "Own"
           }
       ],
       "LastServiceDate": "/Date(1118492529530)/",
@@ -192,11 +192,11 @@
               "Serial": "0983123",
               "ModelNum": "9873123",
             "Diagnostics": 150764,
-                "OwnRent":  "Rent"
+                "Type":  "Rent"
           }
       ],
       "LastServiceDate": "/Date(1347912529530)/",
-      "OwnRent": "Rent",
+      "Type": "Rent",
       "ServiceInterval": 180,
       "Notes": "This is some Freshwater"
   },
@@ -216,11 +216,11 @@
               "Serial": "s3r1@l",
               "ModelNum": "561-123",
             "Diagnostics": 7548,
-            "OwnRent":  "Own"
+            "Type":  "Own"
           }
       ],
       "LastServiceDate": "/Date(1347189529530)/",
-      "OwnRent": "Own",
+      "Type": "Own",
       "ServiceInterval": 150,
       "Notes": "This guy is a jerk"
   }
