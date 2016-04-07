@@ -39,7 +39,7 @@ namespace Shasta_Water_Management
 
         public IEnumerable<Equipment> Equipment { get; set; }
 
-        public DateTime? LastServiceDate { get; set; }
+        public DateTime? LastService { get; set; }
 
         public int ServiceInterval { get; set; }
     }

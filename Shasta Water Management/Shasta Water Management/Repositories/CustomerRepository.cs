@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.IO;
@@ -18,15 +19,16 @@ namespace Shasta_Water_Management.Repositories
         public static IEnumerable<Customer> GetCustomers()
         {
             IEnumerable<Customer> Customers = new List<Customer>();
-            //var db = new SQLiteConnection("C:\\Users\\blueh\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Data Access\\Shasta.db");
-            ////var db = new SQLiteConnection(Path.GetFullPath("\\Shasta Water Management\\Data Access\\Shasta.db"));
+            var path = HttpContext.Current.Server.MapPath("~/Data Access/Shasta.db");
+            var db = new SQLiteConnection(path);
 
-            //IEnumerable<Customer> Customers = db.Table<Customer>();
+            //Customers = db.Table<Customer>().Where(x => x.Deleted = "N");
+            Customers = db.Table<Customer>();
 
-            using (var sr = new StreamReader("C:\\Users\\blueh\\Source\\Repos\\Shasta_Water_Management\\Shasta Water Management\\Shasta Water Management\\Scripts\\customers.json"))
-            {
-                Customers = JsonConvert.DeserializeObject<List<Customer>>(sr.ReadToEnd());
-            }
+            //foreach (var customer in Customers)
+            //{
+            //    customer.Equipment = db.Table<Equipment>().Where(x => x.EquipID == customer.EquipID);
+            //}
 
             return Customers;
         }

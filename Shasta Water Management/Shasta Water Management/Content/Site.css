@@ -84,6 +84,11 @@ header {
     background: #666;
 }
 
+#toolbar li a {
+    color: white;
+    text-decoration: none;
+}
+
 /*=========================
     Main
   =========================*/

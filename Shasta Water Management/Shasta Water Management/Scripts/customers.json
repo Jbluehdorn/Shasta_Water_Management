@@ -11,7 +11,7 @@
       "Equipment": [
           {
               "ID": 1,
-              "Type": "Machine",
+              "Name": "Machine",
               "Serial": "2012",
               "ModelNum": "ABD-123",
             "Diagnostics": 130000,
@@ -19,7 +19,7 @@
           },
           {
               "ID": 2,
-              "Type": "Machine",
+              "Name": "Machine",
               "Serial": "22038",
               "ModelNum": "ABD-123",
             "Diagnostics": 149780,
@@ -42,7 +42,7 @@
       "Equipment": [
           {
               "ID": 8,
-              "Type": "Machine",
+              "Name": "Machine",
               "Serial": "2012",
               "ModelNum": "ABD-123",
             "Diagnostics": 130000,
@@ -65,7 +65,7 @@
       "Equipment": [
           {
               "ID": 20,
-              "Type": "Laundry",
+              "Name": "Laundry",
               "Serial": "B1D-FA3",
               "ModelNum": "Part",
             "Diagnostics": 7878,
@@ -88,7 +88,7 @@
       "Equipment": [
           {
               "ID": 17,
-              "Type": "Filter",
+              "Name": "Filter",
               "Serial": "0983123",
               "ModelNum": "9873123",
             "Diagnostics": 150764,
@@ -96,7 +96,7 @@
           },
           {
               "CustomerID": 17,
-              "Type": "Filter",
+              "Name": "Filter",
               "Serial": "0983123",
               "ModelNum": "9873123",
             "Diagnostics": 150764,
@@ -119,7 +119,7 @@
       "Equipment": [
           {
               "ID": 76,
-              "Type": "Vehicle",
+              "Name": "Vehicle",
               "Serial": "s3r1@l",
               "ModelNum": "561-123",
             "Diagnostics": 7548,
@@ -142,7 +142,7 @@
       "Equipment": [
           {
               "ID": 8,
-              "Type": "Machine",
+              "Name": "Machine",
               "Serial": "2012",
               "ModelNum": "ABD-123",
             "Diagnostics": 130000,
@@ -165,7 +165,7 @@
       "Equipment": [
           {
               "ID": 20,
-              "Type": "Laundry",
+              "Name": "Laundry",
               "Serial": "B1D-FA3",
               "ModelNum": "Part",
             "Diagnostics": 7878,
@@ -188,7 +188,7 @@
       "Equipment": [
           {
               "ID": 17,
-              "Type": "Filter",
+              "Name": "Filter",
               "Serial": "0983123",
               "ModelNum": "9873123",
             "Diagnostics": 150764,
@@ -212,7 +212,7 @@
       "Equipment": [
           {
               "ID": 76,
-              "Type": "Vehicle",
+              "Name": "Vehicle",
               "Serial": "s3r1@l",
               "ModelNum": "561-123",
             "Diagnostics": 7548,
