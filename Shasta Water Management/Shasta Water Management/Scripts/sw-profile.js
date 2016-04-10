@@ -1,13 +1,13 @@
 ﻿angular.module('customer-profile', [])
     .controller('profileCtrl', ['$scope', function ($scope) {
         $scope.customer = customer;
-        console.log($scope.customer.Equipment);
-        $scope.customer.LastServiceDate = new Date(parseInt($scope.customer.LastServiceDate.substr(6)));
+        console.log($scope.customer);
+        $scope.customer.LastService = new Date(parseInt($scope.customer.LastService.substr(6)));
 
         //Prevents issues with setting the date directly
-        $scope.customer.NextServiceDate = new Date($scope.customer.LastServiceDate);
+        $scope.customer.NextServiceDate = new Date($scope.customer.LastService);
         //Adds the service interval dates to the last service date
-        $scope.customer.NextServiceDate = new Date($scope.customer.NextServiceDate.setDate($scope.customer.NextServiceDate.getDate()  +  $scope.customer.ServiceInterval));
+        $scope.customer.NextServiceDate = new Date($scope.customer.NextServiceDate.setMonth($scope.customer.NextServiceDate.getMonth()  +  $scope.customer.ServiceInterval));
 
         //Checks if the service date is before or after today
         $scope.withinServiceDate = function() {

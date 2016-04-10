@@ -1,6 +1,7 @@
 ﻿@model Customer
 @{
     ViewBag.Title = "Add";
+    Html.RenderPartial("~/Views/Home/_ActionDefinitionUrls.cshtml");
 }
 
 <script>
@@ -10,9 +11,9 @@
 
 <div ng-controller="formCtrl" id="employee-form">
     <div class="container">
-        <h1>
-            <span ng-if="customer">Edit </span><span ng-if="!customer">Add </span>Customer
-        </h1>
+        <div class="page-header">
+            <h1>{{method}} Customer</h1>
+        </div>
         @using (Html.BeginForm())
         {
             <div class="row">
@@ -29,6 +30,41 @@
                 <div class="form-group col-xs-6">
                     <label class="control-label">Home Phone:</label>
                     <input type="text" name="HomePhoneNum" class="form-control" ng-model="customer.HomePhoneNum"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <label class="control-label">Address:</label>
+                    <input type="text" class="form-control" name="Address" ng-model="customer.Address"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-4">
+                    <label class="control-label">City:</label>
+                    <input type="text" class="form-control" name="City" ng-model="customer.City"/>
+                </div>
+                <div class="form-group col-xs-4">
+                    <label class="control-label">State:</label>
+                    <select class="form-control"
+                            name="State"
+                            ng-options="state.Abbreviation as state.Abbreviation for state in states"
+                            ng-model="customer.State">
+                    </select>
+                </div>
+                <div class="form-group col-xs-4">
+                    <label class="control-label">Zip:</label>
+                    <input type="text" class="form-control" name="Zip" ng-model="customer.Zip"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                    <label class="control-label">Notes:</label>
+                    <textarea class="form-control" rows="3" ng-model="customer.Notes"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">{{method}} Customer</button>
                 </div>
             </div>
         }

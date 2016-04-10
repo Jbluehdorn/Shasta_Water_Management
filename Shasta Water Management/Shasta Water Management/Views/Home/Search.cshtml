@@ -43,8 +43,8 @@
             <tr ng-repeat="customer in pagedCustomers[currentPage] | filter:searchTerm | orderBy: orderTerm : reverse" ng-click="select(customer)">
                 <td>{{customer.CustomerID}}</td>
                 <td>{{customer.Name}}</td>
-                <td>{{customer.CellPhoneNum}}</td>
-                <td>{{customer.LastServiceDate | date: 'longDate'}}</td>
+                <td>{{customer.CellPhoneNum | phone}}</td>
+                <td>{{customer.LastService | date: 'longDate'}}</td>
             </tr>
         </tbody>
         <tfoot>

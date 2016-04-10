@@ -30,5 +30,12 @@ namespace Shasta_Water_Management.Controllers
 
             return Json(customers, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult GetStates()
+        {
+            var states = StatesHelper.States.GetStatesFromXML().Where(x => x.Country.Equals("US"));
+
+            return Json(states, JsonRequestBehavior.AllowGet);
+        }
     }
 }

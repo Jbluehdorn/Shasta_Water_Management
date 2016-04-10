@@ -30,8 +30,8 @@
             <div class="col-sm-3">
                 <div class="customer-info" id="service-dates">
                     <h3>Service Dates:</h3>
-                    <strong>Last Service Date:</strong> {{customer.LastServiceDate | date: 'shortDate'}} <br />
-                    <strong>Service Interval:</strong> {{customer.ServiceInterval / 30}} Months<br />
+                    <strong>Last Service Date:</strong> {{customer.LastService | date: 'shortDate'}} <br />
+                    <strong>Service Interval:</strong> {{customer.ServiceInterval}} Months<br />
                     <strong>Next Service Date:</strong><span ng-class="{'pastDate': !withinServiceDate()}">{{customer.NextServiceDate | date: 'shortDate'}}</span>
                 </div>
             </div>

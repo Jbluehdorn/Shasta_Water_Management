@@ -26,6 +26,22 @@ namespace Shasta_Water_Management.Controllers
         }
 
         /// <summary>
+        /// Get the customers who need to be serviced
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult GetUpcomingServiceCustomers()
+        {
+            IEnumerable<Customer> customers = new List<Customer>();
+
+            customers =
+                CustomerRepository.GetCustomers()
+                    .Where(x => Convert.ToDateTime(x.LastService).AddMonths(x.ServiceInterval) < DateTime.Now.AddDays(7));
+
+            return View("~/Views/Home/UpcomingServices.cshtml", customers);
+        }
+
+        /// <summary>
         /// Brings up the customer profile page
         /// </summary>
         /// <param name="id">customer id</param>

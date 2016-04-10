@@ -31,7 +31,8 @@ namespace Shasta_Water_Management
                     "~/Scripts/sw-search.js",
                     "~/Scripts/sw-profile.js",
                     "~/Scripts/sw-customerform.js",
-                    "~/Scripts/sw-directions.js"
+                    "~/Scripts/sw-directions.js",
+                    "~/Scripts/sw-upcomingServices.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/site").Include(

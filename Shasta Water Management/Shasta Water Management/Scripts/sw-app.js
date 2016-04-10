@@ -1,4 +1,4 @@
-﻿angular.module('shasta-water', ['search', 'customer-profile', 'customer-form', 'directions'])
+﻿angular.module('shasta-water', ['search', 'customer-profile', 'customer-form', 'directions', 'upcomingServices'])
     //Holds the navigation information for the page
     .directive('swNavigation', ['$location', function ($location) {
         return {

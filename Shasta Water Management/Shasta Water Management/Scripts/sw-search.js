@@ -68,17 +68,19 @@
         //Gets all the customers from the server and puts them in the array
         customerFactory.get()
             .success(function (data) {
-                console.log(data);
                 $scope.customers = $filter('orderBy')(data, 'Name');
-                console.log($scope.customers);
 
                 $scope.customers.forEach(function (customer) {
-                    customer.CustomerID = parseInt(customer.CustomerID);
-                    //customer.LastService = new Date(parseInt(customer.LastService.substr(6)));
-                    customer.serviceDateFilteredLong = $filter('date')(customer.LastService, 'longDate');
-                    customer.serviceDateFilteredShort = $filter('date')(customer.LastService, 'shortDate');
-                    customer.serviceDateFilteredMed = $filter('date')(customer.LastService, 'mediumDate');
-                    customer.serviceDateFilteredNormal = $filter('date')(customer.LastService, 'MM/dd/yy');
+                    try {
+                        customer.CustomerID = parseInt(customer.CustomerID);
+                        customer.LastService = new Date(parseInt(customer.LastService.substr(6)));
+                        customer.serviceDateFilteredLong = $filter('date')(customer.LastService, 'longDate');
+                        customer.serviceDateFilteredShort = $filter('date')(customer.LastService, 'shortDate');
+                        customer.serviceDateFilteredMed = $filter('date')(customer.LastService, 'mediumDate');
+                        customer.serviceDateFilteredNormal = $filter('date')(customer.LastService, 'MM/dd/yy');
+                    } catch(ex) {
+                        
+                    }
                 });
 
                 $scope.updateCustomers($scope.customers);
@@ -100,4 +102,37 @@
         $scope.select = function (customer) {
             window.location = window.location + '/' + customer.CustomerID;
         }
-    }]);
+    }])
+    .filter('phone', function() {
+        return function(phone) {
+            var phoneArr = phone.split('');
+            var formattedPhone = '';
+
+            if (phoneArr.length === 10) {
+                formattedPhone += '(';
+                for (var i = 0; i < 3; i++) {
+                    formattedPhone += phoneArr[i];
+                }
+                formattedPhone += ') ';
+                for (var i = 3; i < 6; i++) {
+                    formattedPhone += phoneArr[i];
+                }
+                formattedPhone += '-';
+                for (var i = 6; i < phoneArr.length; i++) {
+                    formattedPhone += phoneArr[i];
+                }
+            } else if (phoneArr.length === 7) {
+                for (var i = 0; i < 3; i++) {
+                    formattedPhone += phoneArr[i];
+                }
+                formattedPhone += '-';
+                for (var i = 3; i < phoneArr.length; i++) {
+                    formattedPhone += phoneArr[i];
+                }
+            } else {
+                formattedPhone = phone;
+            }
+
+            return formattedPhone;
+        }
+    });

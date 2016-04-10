@@ -51,6 +51,10 @@
       <HintPath>..\packages\SQLite.CodeFirst.1.1.11.0\lib\net45\SQLite.CodeFirst.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="StatesHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AndyWorksStatesHelper.1.0\lib\net45\StatesHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -242,8 +246,10 @@
     <Content Include="Scripts\sw-directions.js" />
     <Content Include="Scripts\sw-profile.js" />
     <Content Include="Scripts\sw-search.js" />
+    <Content Include="Scripts\sw-upcomingServices.js" />
     <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="App_DataStates.xml" />
     <Content Include="Template\EditableTemplate.html" />
     <Content Include="Template\EditableTextareaTemplate.html" />
     <Content Include="Views\Home\Add.cshtml" />
@@ -267,6 +273,7 @@
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Customer\CustomerForm.cshtml" />
     <Content Include="Views\Customer\Directions.cshtml" />
+    <Content Include="Views\Home\UpcomingServices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

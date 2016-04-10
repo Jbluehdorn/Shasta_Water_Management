@@ -1,32 +1,15 @@
-﻿angular.module('customer-form', [])
-    .controller('formCtrl', ['$scope', '$http', function($scope, $http) {
-        $scope.customer = customer || {};
-        $scope.method = method;
-        $scope.states = [];
+﻿angular.module('upcomingServices', [])
+    .controller('upcomingServicesCtrl', ['$scope', function($scope) {
+        $scope.customers = customers;
 
-        //Defaults state to Missouri
-        if ($scope.customer.State === undefined) {
-            $scope.customer.State = "MO";
-        }
-
-        //Converts the Last Service to a date object
-        if ($scope.customer.LastService !== undefined) {
-            $scope.customer.LastService = new Date(parseInt($scope.customer.LastService.substr(6)));
-        }
-
-        //Gets all states
-        $http({ url: getStatesUrl })
-            .success(function(data) {
-                console.log(data);
-                $scope.states = data;
-            })
-            .error(function() {
-                swal({
-                    title: 'Error',
-                    text: 'States could not be retrieved',
-                    type: 'error'
-                });
-            });
+        //Converts datetime strings to a date object
+        $scope.customers.forEach(function (customer) {
+            try {
+                customer.LastService = new Date(parseInt(customer.LastService.substr(6)));
+            } catch(ex) {
+                
+            }
+        });
     }])
     .filter('phone', function () {
         return function (phone) {
