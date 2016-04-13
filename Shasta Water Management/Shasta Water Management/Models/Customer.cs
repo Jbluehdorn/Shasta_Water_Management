@@ -27,6 +27,9 @@ namespace Shasta_Water_Management
         public string City { get; set; }
 
         [StringLength(10)]
+        public string State { get; set; }
+
+        [StringLength(10)]
         public string Zip { get; set; }
 
         [StringLength(5)]
@@ -35,12 +38,14 @@ namespace Shasta_Water_Management
         [StringLength(500)]
         public string Notes { get; set; }
 
-        public virtual CustEquip CustEquip { get; set; }
+        public IEnumerable<CustEquip> CustEquip { get; set; }
 
         public IEnumerable<Equipment> Equipment { get; set; }
 
         public DateTime? LastService { get; set; }
 
         public int ServiceInterval { get; set; }
+
+        public string Deleted { get; set; }
     }
 }
