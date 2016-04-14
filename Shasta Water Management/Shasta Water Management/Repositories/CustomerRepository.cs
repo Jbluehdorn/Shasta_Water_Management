@@ -22,17 +22,18 @@ namespace Shasta_Water_Management.Repositories
             var path = HttpContext.Current.Server.MapPath("~/Data Access/Shasta.db");
             var db = new SQLiteConnection(path);
 
-            Customers = db.Table<Customer>().Where(x => x.Deleted == "N");
+            Customers = db.Table<Customer>().Where(x => x.Deleted == "N").ToList();
             
 
 
             foreach (var customer in Customers)
             {
                 string id = customer.CustomerID.ToString();
-                var eq = db.Query<CustEquip>("SELECT SerialNum, ModelNum, Type, Name FROM CustEquip JOIN Equipment ON Equipment.EquipID = CustEquip.EquipID WHERE CustEquip.CustomerID = ?", id);
-                customer.Equipment = eq.Cast<Equipment>();
+                var eq = db.Query<CustEquip>("SELECT CustomerID, SerialNum, ModelNum, Type, Name, RentOwn, Diagnostics FROM CustEquip JOIN Equipment ON Equipment.EquipID = CustEquip.EquipID WHERE CustEquip.CustomerID = ?", id);
+                customer.CustEquip = eq;
+                
             }
-
+            
             return Customers;
         }
 
@@ -55,5 +56,10 @@ namespace Shasta_Water_Management.Repositories
 
             return customer;
         }
+
+       
+
+
+
     }
 }
