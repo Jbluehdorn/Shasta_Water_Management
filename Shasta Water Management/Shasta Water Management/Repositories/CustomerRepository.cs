@@ -57,7 +57,11 @@ namespace Shasta_Water_Management.Repositories
             return customer;
         }
 
-       
+        public static void DeleteCustomer()
+        {
+
+
+        }
 
 
 
