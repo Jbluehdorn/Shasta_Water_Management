@@ -3,9 +3,9 @@ namespace Shasta_Water_Management
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+    //using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
+    using SQLite;
     [Table("CustEquip")]
     public partial class CustEquip : Equipment
     {
@@ -15,6 +15,7 @@ namespace Shasta_Water_Management
             Customers = new HashSet<Customer>();
         }
 
+        [AutoIncrement]
         public int CustEquipID { get; set; }
 
         public int CustomerID { get; set; }
@@ -31,6 +32,9 @@ namespace Shasta_Water_Management
 
         [StringLength(500)]
         public string Diagnostics { get; set; }
+
+        [StringLength(1)]
+        public string Deleted { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer> Customers { get; set; }

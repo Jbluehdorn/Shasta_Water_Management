@@ -3,12 +3,14 @@ namespace Shasta_Water_Management
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+    //using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using SQLite;
 
     [Table("Customer")]
     public partial class Customer
     {
+        [AutoIncrement]
         public int CustomerID { get; set; }
 
         [StringLength(32)]
@@ -44,6 +46,7 @@ namespace Shasta_Water_Management
 
         public int ServiceInterval { get; set; }
 
+        [StringLength(1)]
         public string Deleted { get; set; }
     }
 }
