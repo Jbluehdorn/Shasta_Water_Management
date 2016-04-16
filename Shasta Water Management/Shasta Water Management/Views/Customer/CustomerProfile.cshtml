@@ -48,11 +48,13 @@
 
     <h2>Equipment</h2>
     <div class="equipment-holder container">
-        <div class="customer-info col-sm-4" ng-repeat="equipment in customer.Equipment">
+        <div class="customer-info col-sm-4" ng-repeat="equipment in customer.CustEquip">
             @*<span class="glyphicon glyphicon-remove-circle" ng-click="remove(equipment)"></span>*@
             <h3>{{equipment.Name}}</h3>
+            <strong>Rent/Own:</strong> {{equipment.RentOwn}} <br />
             <strong>Model Number:</strong> {{equipment.ModelNum}} <br/>
-            <strong>Own/Rent:</strong> {{equipment.Type}} <br/>
+            <strong>Serial Number:</strong> {{equipment.SerialNum}} <br />
+            <strong>Type:</strong> {{equipment.Type}} <br/>
             <strong>Diagnostics:</strong> {{equipment.Diagnostics}}
             @*<editable-field header="'Model Number'" field="equipment.ModelNum"></editable-field>
             <editable-field header="'Own/Rent'" field="equipment.OwnRent"></editable-field>
