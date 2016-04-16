@@ -22,13 +22,7 @@ namespace Shasta_Water_Management.Repositories
             var path = HttpContext.Current.Server.MapPath("~/Data Access/Shasta.db");
             var db = new SQLiteConnection(path);
 
-            //Customers = db.Table<Customer>().Where(x => x.Deleted = "N");
             Customers = db.Table<Customer>();
-
-            //foreach (var customer in Customers)
-            //{
-            //    customer.Equipment = db.Table<Equipment>().Where(x => x.EquipID == customer.EquipID);
-            //}
 
             return Customers;
         }

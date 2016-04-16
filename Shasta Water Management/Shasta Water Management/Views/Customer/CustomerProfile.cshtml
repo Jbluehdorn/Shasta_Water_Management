@@ -64,10 +64,10 @@
     <div class="container">
         <div class="row">
             <div class="btn-group">
-                @using (Html.BeginForm("EditCustomer", "Customer", FormMethod.Get, new {@class = "btn-group"}))
+                @using (Html.BeginForm("EditCustomer", "Customer", FormMethod.Get, new { @class = "btn-group" }))
                 {
-                    <input type="hidden" name="id" ng-value="customer.CustomerID"/>
                     <button class="btn btn-default">Edit Customer</button>
+                    <input type="hidden" name="id" ng-value="customer.CustomerID"/>
                 }
                 @using (Html.BeginForm("Directions", "Customer", FormMethod.Get, new {@class = "btn-group"}))
                 {

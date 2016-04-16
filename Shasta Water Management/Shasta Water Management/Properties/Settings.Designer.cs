@@ -31,5 +31,23 @@ namespace Shasta_Water_Management.Properties {
                 return ((string)(this["DefaultAddress"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Admin")]
+        public string UserName {
+            get {
+                return ((string)(this["UserName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("guest")]
+        public string Password {
+            get {
+                return ((string)(this["Password"]));
+            }
+        }
     }
 }
