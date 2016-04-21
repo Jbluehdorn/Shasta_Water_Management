@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Shasta_Water_Management.Models
+<!DOCTYPE html>
 <html ng-app="shasta-water">
 <head>
     <meta charset="utf-8" />
@@ -19,15 +20,18 @@
         </a>
     </header>
     <div class="main">
-        <nav id="toolbar" class="col-xs-12 col-sm-2" sw-navigation>
-            <ul>
-                @*<li ng-repeat="category in categories" ng-class="{'active': page === category}" ng-click="changePage(category)">{{category}}</li>*@
-                <li ng-class="{'active': page === 'UpcomingServices'}">@Html.ActionLink("Services", "GetUpcomingServiceCustomers", "Customer")</li>
-                <li ng-class="{'active': page === 'Search'}">@Html.ActionLink("Search", "Search", "Home")</li>
-                <li ng-class="{'active': page === 'Add'}">@Html.ActionLink("Add", "NewCustomer", "Customer")</li>
-            </ul>
-        </nav><!--
-     --><div class="main-content col-xs-12 col-sm-10" sw-navigation>
+        @if (GlobalVariables.LoggedIn.Equals("Y"))
+        {
+            <nav id="toolbar" class="col-xs-12 col-sm-2" sw-navigation>
+                <ul>
+                    @*<li ng-repeat="category in categories" ng-class="{'active': page === category}" ng-click="changePage(category)">{{category}}</li>*@
+                    <li ng-class="{'active': page === 'UpcomingServices'}">@Html.ActionLink("Services", "GetUpcomingServiceCustomers", "Customer")</li>
+                    <li ng-class="{'active': page === 'Search'}">@Html.ActionLink("Search", "Search", "Home")</li>
+                    <li ng-class="{'active': page === 'Add'}">@Html.ActionLink("Add", "NewCustomer", "Customer")</li>
+                </ul>
+            </nav>
+        }<!--
+        --><div class="main-content col-xs-12 col-sm-10" sw-navigation>
             @RenderBody()
         </div>
     </div>

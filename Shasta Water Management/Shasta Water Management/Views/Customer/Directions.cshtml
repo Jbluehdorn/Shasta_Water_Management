@@ -7,15 +7,15 @@
     <div id="map"></div>
     <!--CONTROLS-->
     <div class="container" id="mapControls">
-        <div class="form-group col-xs-5">
+        <div class="form-group col-xs-6 col-sm-5">
             <label class="control-label">Start Address:</label>
             <textarea class="form-control" ng-model="UserAddress"></textarea>
         </div>
-        <div class="form-group col-xs-5">
+        <div class="form-group col-xs-6 col-sm-5">
             <label class="control-label">End Address:</label>
             <textarea class="form-control" ng-model="CustomerAddress"></textarea>
         </div>
-        <button class="btn btn-primary col-xs-2" ng-click="GetDirections()">Go!</button>
+        <button class="btn btn-primary col-sm-2 col-xs-12" ng-click="GetDirections()">Go!</button>
     </div>
     <!--DIRECTIONS TO LOCATION-->
     <div class="container" id="steps" ng-if="path.length">
