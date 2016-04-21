@@ -380,6 +380,10 @@ header {
     background: #C00;
 }
 
+.table-responsive {
+    background: #ddd;
+}
+
 
 /*===========================
         MEDIA QUERIES
