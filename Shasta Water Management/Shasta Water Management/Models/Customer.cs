@@ -34,7 +34,6 @@ namespace Shasta_Water_Management
         [StringLength(10)]
         public string Zip { get; set; }
 
-        
         [StringLength(500)]
         public string Notes { get; set; }
 
