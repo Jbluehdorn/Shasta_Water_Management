@@ -358,6 +358,26 @@ header {
 }
 
 /*============================
+    Customer Form
+*/
+.form-equip {
+    position: relative;
+}
+
+.form-equip .glyphicon-remove-circle {
+    position: absolute;
+    right: 5px;
+    top: 0;
+    z-index: 100;
+    font-size: 1.7em;
+    cursor: pointer;
+}
+
+.form-equip .glyphicon-remove-circle:hover {
+    color: #d00;
+}
+
+/*============================
         Misc.
   ============================*/
 .inner-addon {
@@ -382,6 +402,10 @@ header {
 
 .table-responsive {
     background: #ddd;
+}
+
+.customer-profile .button-bar {
+    margin-top: 20px;
 }
 
 

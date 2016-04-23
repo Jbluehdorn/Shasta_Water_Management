@@ -27,6 +27,43 @@
                     type: 'error'
                 });
             });
+
+        //Push a new piece of equipment
+        $scope.newEquip = function () {
+            $scope.customer.CustEquip = $scope.customer.CustEquip || [];
+            $scope.customer.CustEquip.push({});
+        }
+
+        //Remove a piece of equipment
+        $scope.removeEquip = function(equipment) {
+            $scope.customer.CustEquip.splice($scope.customer.CustEquip.indexOf(equipment), 1);
+        }
+
+        $scope.SaveCustomer = function() {
+            $scope.method === "Add" ? $scope.AddCustomer() : $scope.EditCustomer();
+        }
+
+        $scope.AddCustomer = function () {
+            $http({ url: addCustomerUrl, method: 'POST', data: { customer: $scope.customer } })
+                .success(function(data) {
+                    console.log(data);
+                    swal('Success!', 'Customer added successfully', 'success');
+                })
+                .error(function() {
+                    swal('Error', 'Customer was not added', 'error');
+                });
+        }
+
+        $scope.EditCustomer = function() {
+            $http({ url: editCustomerUrl, method: 'POST', data: { customer: $scope.customer } })
+                .success(function(data) {
+                    console.log(data);
+                    swal('Success!', 'Customer edited successfully', 'success');
+                })
+                .error(function() {
+                    swal('Error', 'Customer was not saved', 'error');
+                });
+        }
     }])
     .filter('phone', function () {
         return function (phone) {

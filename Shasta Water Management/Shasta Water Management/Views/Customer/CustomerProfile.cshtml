@@ -1,6 +1,7 @@
 ﻿@model Shasta_Water_Management.Customer
 @{
     ViewBag.title = "Search";
+    Html.RenderPartial("~/Views/Home/_ActionDefinitionUrls.cshtml");
 }
 
 <script>
@@ -65,7 +66,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="btn-group">
+            <div class="btn-group button-bar">
                 @using (Html.BeginForm("EditCustomer", "Customer", FormMethod.Get, new { @class = "btn-group" }))
                 {
                     <button class="btn btn-default">Edit Customer</button>
@@ -76,9 +77,9 @@
                     <input type="hidden" name="id" ng-value="customer.CustomerID"/>
                     <button type="submit" class="btn btn-default">Get Directions</button>
                 }
+                <button class="btn btn-default" ng-click="logService()">Log Service</button>
+                <button class="btn btn-danger" ng-click="deleteCustomer()">Delete</button>
             </div>
         </div>
     </div>
-    <hr>
-    {{customer}}
 </div>

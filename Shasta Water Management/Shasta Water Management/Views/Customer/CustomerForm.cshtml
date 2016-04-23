@@ -62,14 +62,55 @@
                     <textarea class="form-control" rows="3" ng-model="customer.Notes"></textarea>
                 </div>
             </div>
+
+            <h3>Equipment</h3>
+            <hr/>
+            <div ng-repeat="equipment in customer.CustEquip" class="form-equip">
+                <span class="glyphicon glyphicon-remove-circle" ng-click="removeEquip(equipment)" title="Remove {{equipment.Name}}"></span>
+                <div class="row">
+                    <div class="form-group col-xs-11">
+                        <label class="control-label">Name:</label>
+                        <input type="text" class="form-control" ng-model="equipment.Name"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-4">
+                        <label class="control-label">Model Num:</label>
+                        <input type="text" class="form-control" ng-model="equipment.ModelNum"/>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <label class="control-label">Serial Num:</label>
+                        <input class="form-control" ng-model="equipment.SerialNum"/>
+                    </div>
+                    <div class="form-group col-xs-4">
+                        <label class="control-label">Rent/Own:</label>
+                        <div class="radio">
+                            <label><input type="radio" ng-model="equipment.RentOwn" name="{{equipment.SerialNum}}RentOwn" value="Rent"/>Rent</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" ng-model="equipment.RentOwn" name="{{equipment.SerialNum}}RentOwn" value="Own"/>Own</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xs-6">
+                        <label class="control-label">Type:</label>
+                        <input class="form-control" ng-model="equipment.Type"/>
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <label class="control-label">Diagnostics</label>
+                        <input class="form-control" ng-model="equipment.Diagnostics"/>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+            
             <div class="row">
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">{{method}} Customer</button>
+                    <button type="button" class="btn btn-primary" ng-click="SaveCustomer()">Save Changes</button>
+                    <button type="button" class="btn btn-default" ng-click="newEquip()">Add Equipment</button>
                 </div>
             </div>
         }
-
-        <hr/>
-        {{customer}}
     </div>
 </div>

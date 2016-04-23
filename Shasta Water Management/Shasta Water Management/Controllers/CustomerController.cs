@@ -93,5 +93,46 @@ namespace Shasta_Water_Management.Controllers
 
             return View("CustomerForm");
         }
+
+        [HttpPost]
+        public ActionResult AddCustomer(Customer customer)
+        {
+            bool success;
+
+            success = CustomerRepository.AddCustomer(customer);
+
+            return Json(success, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult EditCustomer(Customer customer)
+        {
+            bool success;
+
+            success = CustomerRepository.ModifyCustomer(customer);
+
+            return Json(success, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult LogService(Customer customer)
+        {
+            bool success;
+
+            customer.LastService = DateTime.Now;
+            success = CustomerRepository.ModifyCustomer(customer);
+
+            return Json(success, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteCustomer(Customer customer)
+        {
+            bool success;
+
+            success = CustomerRepository.DeleteCustomer(customer);
+
+            return Json(success, JsonRequestBehavior.AllowGet);
+        }
     }
 }
