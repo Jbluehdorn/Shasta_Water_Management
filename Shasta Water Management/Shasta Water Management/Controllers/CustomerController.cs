@@ -97,9 +97,9 @@ namespace Shasta_Water_Management.Controllers
         [HttpPost]
         public ActionResult AddCustomer(Customer customer)
         {
-            bool success;
+            bool success = true;
 
-            success = CustomerRepository.AddCustomer(customer);
+            CustomerRepository.AddCustomer(customer);
 
             return Json(success, JsonRequestBehavior.AllowGet);
         }
@@ -107,9 +107,9 @@ namespace Shasta_Water_Management.Controllers
         [HttpPost]
         public ActionResult EditCustomer(Customer customer)
         {
-            bool success;
+            bool success = true;
 
-            success = CustomerRepository.ModifyCustomer(customer);
+            CustomerRepository.ModifyCustomer(customer);
 
             return Json(success, JsonRequestBehavior.AllowGet);
         }
@@ -117,10 +117,10 @@ namespace Shasta_Water_Management.Controllers
         [HttpPost]
         public ActionResult LogService(Customer customer)
         {
-            bool success;
+            bool success = true;
 
             customer.LastService = DateTime.Now;
-            success = CustomerRepository.ModifyCustomer(customer);
+            CustomerRepository.ModifyCustomer(customer);
 
             return Json(success, JsonRequestBehavior.AllowGet);
         }
@@ -128,9 +128,9 @@ namespace Shasta_Water_Management.Controllers
         [HttpPost]
         public ActionResult DeleteCustomer(Customer customer)
         {
-            bool success;
+            bool success = true;
 
-            success = CustomerRepository.DeleteCustomer(customer);
+            CustomerRepository.DeleteCustomer(customer);
 
             return Json(success, JsonRequestBehavior.AllowGet);
         }

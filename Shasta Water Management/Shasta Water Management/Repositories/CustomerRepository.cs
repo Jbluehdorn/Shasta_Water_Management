@@ -81,7 +81,7 @@ namespace Shasta_Water_Management.Repositories
             var path = HttpContext.Current.Server.MapPath("~/Data Access/Shasta.db");
             var db = new SQLiteConnection(path);
             db.Execute("INSERT INTO Customer (Name, CellPhoneNum, HomePhoneNum, Address, City, State, Zip, Notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", cust.Name, cust.CellPhoneNum, cust.HomePhoneNum, cust.Address, cust.City, cust.State, cust.Zip, cust.Notes);
-            //db.Execute("INSERT INTO CustEquip (CustomerID, SerialNumber")
+            db.Execute("INSERT INTO CustEquip (CustomerID, SerialNumber");
         }
 
         public static void ModifyCustomer(Customer cust)
