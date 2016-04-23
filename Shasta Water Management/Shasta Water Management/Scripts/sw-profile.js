@@ -1,22 +1,27 @@
 ﻿angular.module('customer-profile', [])
-    .controller('profileCtrl', ['$scope', function ($scope) {
+    .controller('profileCtrl', ['$scope', '$http', function ($scope, $http) {
         $scope.customer = customer;
         console.log($scope.customer);
-        $scope.customer.LastService = new Date(parseInt($scope.customer.LastService.substr(6)));
+        try {
+            $scope.customer.LastService = new Date(parseInt($scope.customer.LastService.substr(6)));
 
-        //Prevents issues with setting the date directly
-        $scope.customer.NextServiceDate = new Date($scope.customer.LastService);
-        //Adds the service interval dates to the last service date
-        $scope.customer.NextServiceDate = new Date($scope.customer.NextServiceDate.setMonth($scope.customer.NextServiceDate.getMonth()  +  $scope.customer.ServiceInterval));
+            //Prevents issues with setting the date directly
+            $scope.customer.NextServiceDate = new Date($scope.customer.LastService);
+            //Adds the service interval dates to the last service date
+            $scope.customer.NextServiceDate = new Date($scope.customer.NextServiceDate.setMonth($scope.customer.NextServiceDate.getMonth() + $scope.customer.ServiceInterval));
 
-        //Checks if the service date is before or after today
-        $scope.withinServiceDate = function() {
-            var today = new Date();
 
-            if ($scope.customer.NextServiceDate > today) {
-                return true;
+            //Checks if the service date is before or after today
+            $scope.withinServiceDate = function () {
+                var today = new Date();
+
+                if ($scope.customer.NextServiceDate > today) {
+                    return true;
+                }
+                return false;
             }
-            return false;
+        } catch (ex) {
+            console.log(ex);
         }
 
         $scope.remove = function (equipment) {
@@ -37,52 +42,48 @@
                 }
             });
         }
-    }])
-    //makes an editable input type=text
-    .directive('editableField', function () {
-        return {
-            restrict: 'E',
-            templateUrl: '/Template/EditableTemplate.html',
-            scope: {
-                field: '=',
-                header: '='
-            },
-            controller: ['$scope', function ($scope) {
-                $scope.editable = false;
 
-                $scope.changeEditMode = function () {
-                    if (!$scope.editable) {
-                        $scope.fieldCopy = angular.copy($scope.field);
-                    } else {
-                        $scope.field = $scope.fieldCopy;
-                    }
-
-                    $scope.editable = !$scope.editable;
-                }
-            }]
+        //Logs a customer's service
+        $scope.logService = function () {
+            $http({ url: logSerivceUrl, method: 'POST', data: { customer: $scope.customer } })
+                .success(function(data) {
+                    swal({
+                        title: 'Success!',
+                        text: 'Customer service logged successfully',
+                        type: 'success'
+                    },
+                    function () {
+                        window.location = window.location;
+                    });
+                })
+                .error(function() {
+                    swal({
+                        title: 'Error',
+                        text: 'Service was not logged',
+                        type: 'error'
+                    });
+                });
         }
-    })
-    //makes an editable textarea
-    .directive('editableTextarea', function () {
-        return {
-            restrict: 'E',
-            templateUrl: '/Template/EditableTextareaTemplate.html',
-            scope: {
-                field: '=',
-                header: '='
-            },
-            controller: ['$scope', function ($scope) {
-                $scope.editable = false;
 
-                $scope.changeEditMode = function () {
-                    if (!$scope.editable) {
-                        $scope.fieldCopy = angular.copy($scope.field);
-                    } else {
-                        $scope.field = $scope.fieldCopy;
-                    }
-
-                    $scope.editable = !$scope.editable;
-                }
-            }]
+        //Delete's the customer
+        $scope.deleteCustomer = function () {
+            $http({ url: deleteCustomerUrl, method: 'POST', data: { customer: $scope.customer } })
+                .success(function(data) {
+                    swal({
+                        title: 'Success!',
+                        text: 'Customer deleted successfully',
+                        type: 'success'
+                    },
+                    function() {
+                        window.location = '/Home/Search';
+                    });
+                })
+                .error(function() {
+                    swal({
+                        title: 'Error',
+                        text: 'Customer not deleted',
+                        type: 'error'
+                    });
+                });
         }
-    });
+    }]);

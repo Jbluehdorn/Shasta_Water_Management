@@ -63,29 +63,33 @@ namespace Shasta_Water_Management.Repositories
         }
 
         //needs work
-        public static void DeleteCustomer(Customer cust)
+        public static bool DeleteCustomer(Customer cust)
         {
+            bool success;
             var path = HttpContext.Current.Server.MapPath("~/Data Access/Shasta.db");
             var db = new SQLiteConnection(path);
 
 
-             db.Execute("UPDATE Customer SET Deleted = 'Y' WHERE CustomerID = ?", cust.CustomerID);
-             db.Execute("UPDATE CustEquip SET Deleted = 'Y' WHERE CustomerID = ?", cust.CustomerID);
-            
-           
+            success = db.Execute("UPDATE Customer SET Deleted = 'Y' WHERE CustomerID = ?", cust.CustomerID) > 0;
+            success = success && db.Execute("UPDATE CustEquip SET Deleted = 'Y' WHERE CustomerID = ?", cust.CustomerID) > 0;
+
+            return success;
         }
 
         //looks like form makes customer object just get properties and add to db
-        public static void AddCustomer(Customer cust)
+        public static bool AddCustomer(Customer cust)
         {
+            bool success;
+            cust.LastService = cust.LastService ?? DateTime.Now;
             var path = HttpContext.Current.Server.MapPath("~/Data Access/Shasta.db");
             var db = new SQLiteConnection(path);
-            db.Insert(cust);
-
+            success = db.Insert(cust) > 0;
+            return success;
         }
 
-        public static void ModifyCustomer(Customer cust)
+        public static bool ModifyCustomer(Customer cust)
         {
+            bool success = false;
             var path = HttpContext.Current.Server.MapPath("~/Data Access/Shasta.db");
             var db = new SQLiteConnection(path);
             var id = cust.CustomerID;
@@ -94,44 +98,45 @@ namespace Shasta_Water_Management.Repositories
 
             if (cust.Name != db.Query<Customer>("SELECT Name FROM Customer WHERE CustomerId = ?", id).ToString())
             {
-                db.Execute("UPDATE Customer SET Name = ? WHERE CustomerID = ?", cust.Name, id );
+                success = db.Execute("UPDATE Customer SET Name = ? WHERE CustomerID = ?", cust.Name, id ) > 0;
             }
 
             if (cust.CellPhoneNum != db.Query<Customer>("SELECT CellPhoneNum FROM Customer WHERE CustomerId = ?", id).ToString())
             {
-                db.Execute("UPDATE Customer SET CellPhoneNum = ? WHERE CustomerID = ?", cust.CellPhoneNum, id);
+                success = db.Execute("UPDATE Customer SET CellPhoneNum = ? WHERE CustomerID = ?", cust.CellPhoneNum, id) > 0;
             }
 
             if (cust.HomePhoneNum != db.Query<Customer>("SELECT HomePhoneNum FROM Customer WHERE CustomerId = ?", id).ToString())
             {
-                db.Execute("UPDATE Customer SET HomePhoneNum = ? WHERE CustomerID = ?", cust.HomePhoneNum, id);
+                success = db.Execute("UPDATE Customer SET HomePhoneNum = ? WHERE CustomerID = ?", cust.HomePhoneNum, id) > 0;
             }
 
             if (cust.Address != db.Query<Customer>("SELECT Address FROM Customer WHERE CustomerId = ?", id).ToString())
             {
-                db.Execute("UPDATE Customer SET Address = ? WHERE CustomerID = ?", cust.Address, id);
+                success = db.Execute("UPDATE Customer SET Address = ? WHERE CustomerID = ?", cust.Address, id) > 0;
             }
 
             if (cust.City != db.Query<Customer>("SELECT City FROM Customer WHERE CustomerId = ?", id).ToString())
             {
-                db.Execute("UPDATE Customer SET City = ? WHERE CustomerID = ?", cust.City, id);
+                success = db.Execute("UPDATE Customer SET City = ? WHERE CustomerID = ?", cust.City, id) > 0;
             }
 
             if (cust.State != db.Query<Customer>("SELECT State FROM Customer WHERE CustomerId = ?", id).ToString())
             {
-                db.Execute("UPDATE Customer SET State = ? WHERE CustomerID = ?", cust.State, id);
+                success = db.Execute("UPDATE Customer SET State = ? WHERE CustomerID = ?", cust.State, id) > 0;
             }
 
             if (cust.Zip != db.Query<Customer>("SELECT Zip FROM Customer WHERE CustomerId = ?", id).ToString())
             {
-                db.Execute("UPDATE Customer SET Zip = ? WHERE CustomerID = ?", cust.Zip, id);
+                success = db.Execute("UPDATE Customer SET Zip = ? WHERE CustomerID = ?", cust.Zip, id) > 0;
             }
 
             if (cust.Notes != db.Query<Customer>("SELECT Notes FROM Customer WHERE CustomerId = ?", id).ToString())
             {
-                db.Execute("UPDATE Customer SET Notes = ? WHERE CustomerID = ?", cust.Notes, id);
+                success = db.Execute("UPDATE Customer SET Notes = ? WHERE CustomerID = ?", cust.Notes, id) > 0;
             }
 
+            return success;
         }
     }
 }
