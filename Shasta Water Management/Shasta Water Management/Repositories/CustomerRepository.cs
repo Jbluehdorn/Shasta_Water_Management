@@ -31,7 +31,7 @@ namespace Shasta_Water_Management.Repositories
             foreach (var customer in Customers)
             {
                 string id = customer.CustomerID.ToString();
-                var eq = db.Query<CustEquip>("SELECT CustomerID, SerialNum, ModelNum, Type, Name, RentOwn, Diagnostics FROM CustEquip JOIN Equipment ON Equipment.EquipID = CustEquip.EquipID WHERE CustEquip.CustomerID = ?", id);
+                var eq = db.Query<CustEquip>("SELECT CustomerID, SerialNum, ModelNum, Type, Name, RentOwn, Diagnostics FROM CustEquip WHERE CustEquip.CustomerID = ? AND Deleted = 'N'", id);
                 customer.CustEquip = eq;
                 
                 
@@ -62,7 +62,7 @@ namespace Shasta_Water_Management.Repositories
             return customer;
         }
 
-        //needs work
+        
         public static void DeleteCustomer(Customer cust)
         {
             var path = HttpContext.Current.Server.MapPath("~/Data Access/Shasta.db");
@@ -75,13 +75,17 @@ namespace Shasta_Water_Management.Repositories
            
         }
 
-        //looks like form makes customer object just get properties and add to db
+
+       
         public static void AddCustomer(Customer cust)
         {
             var path = HttpContext.Current.Server.MapPath("~/Data Access/Shasta.db");
             var db = new SQLiteConnection(path);
             db.Execute("INSERT INTO Customer (Name, CellPhoneNum, HomePhoneNum, Address, City, State, Zip, Notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", cust.Name, cust.CellPhoneNum, cust.HomePhoneNum, cust.Address, cust.City, cust.State, cust.Zip, cust.Notes);
-            //db.Execute("INSERT INTO CustEquip (CustomerID, SerialNumber")
+            foreach (var eq in cust.CustEquip)
+            {
+                db.Execute("INSERT INTO CustEquip (CustomerID, Type, ModelNum, Name, SerialNum, RentOwn, Diagnostics) VALUES (?, ?, ?, ?, ?, ?, ?)", cust.CustomerID, eq.Type, eq.ModelNum, eq.Name, eq.SerialNum, eq.RentOwn, eq.Diagnostics);
+            }
         }
 
         public static void ModifyCustomer(Customer cust)
@@ -131,6 +135,12 @@ namespace Shasta_Water_Management.Repositories
             {
                 db.Execute("UPDATE Customer SET Notes = ? WHERE CustomerID = ?", cust.Notes, id);
             }
+
+            if (cust.LastService.ToString() !=  db.Query<Customer>("SELECT LastService FROM Customer WHERE CustomerId = ?", id).ToString())
+            {
+                db.Execute("UPDATE Customer SET LastService = ? WHERE CustomerID = ?", cust.LastService, id);
+            }
+
 
         }
     }

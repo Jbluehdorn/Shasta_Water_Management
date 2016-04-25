@@ -39,8 +39,6 @@ namespace Shasta_Water_Management
 
         public IEnumerable<CustEquip> CustEquip { get; set; }
 
-        public IEnumerable<Equipment> Equipment { get; set; }
-
         public DateTime? LastService { get; set; }
 
         public int ServiceInterval { get; set; }

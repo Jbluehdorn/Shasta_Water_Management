@@ -16,7 +16,6 @@ namespace Shasta_Water_Management
 
         public virtual DbSet<CustEquip> CustEquips { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Equipment> Equipments { get; set; }
         public virtual DbSet<Service> Services { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -56,17 +55,7 @@ namespace Shasta_Water_Management
                 .Property(e => e.Notes)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Equipment>()
-                .Property(e => e.Type)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Equipment>()
-                .Property(e => e.ModelNum)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Equipment>()
-                .Property(e => e.Name)
-                .IsUnicode(false);
+          
 
             modelBuilder.Entity<Service>()
                 .Property(e => e.StartLoc)

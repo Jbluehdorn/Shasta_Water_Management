@@ -7,7 +7,7 @@ namespace Shasta_Water_Management
     using System.Data.Entity.Spatial;
     using SQLite;
     [Table("CustEquip")]
-    public partial class CustEquip : Equipment
+    public partial class CustEquip 
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CustEquip()
@@ -20,12 +20,17 @@ namespace Shasta_Water_Management
 
         public int CustomerID { get; set; }
 
+        [StringLength(32)]
+        public string Type { get; set; }
+
+        [StringLength(50)]
+        public string ModelNum { get; set; }
+
+        [StringLength(50)]
+        public string Name { get; set; }
+
         [StringLength(50)]
         public string SerialNum { get; set; }
-
-        public int EquipID { get; set; }
-
-        public virtual Equipment Equipment { get; set; }
 
         [StringLength(5)]
         public string RentOwn { get; set; }

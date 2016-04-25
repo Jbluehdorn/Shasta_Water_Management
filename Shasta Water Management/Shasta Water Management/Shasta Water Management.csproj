@@ -191,7 +191,6 @@
     <Compile Include="Filters\SkipLoginFilter.cs" />
     <Compile Include="Models\CustEquip.cs" />
     <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Equipment.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
