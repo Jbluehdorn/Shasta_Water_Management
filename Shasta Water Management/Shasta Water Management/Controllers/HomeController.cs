@@ -13,7 +13,7 @@ namespace Shasta_Water_Management.Controllers
     {
         public ActionResult Index()
         {
-            return View("UpcomingServices");
+            return Redirect("/");
         }
 
         public ActionResult Search()

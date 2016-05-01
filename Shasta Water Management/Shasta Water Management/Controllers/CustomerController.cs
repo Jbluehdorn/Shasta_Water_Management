@@ -101,7 +101,7 @@ namespace Shasta_Water_Management.Controllers
 
             CustomerRepository.AddCustomer(customer);
 
-            return Json(success, JsonRequestBehavior.AllowGet);
+            return Redirect("/Home/Search");
         }
 
         [HttpPost]
