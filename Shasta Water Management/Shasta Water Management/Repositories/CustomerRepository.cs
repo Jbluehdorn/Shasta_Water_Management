@@ -146,44 +146,7 @@ namespace Shasta_Water_Management.Repositories
                 db.Execute("UPDATE Customer SET LastService = ? WHERE CustomerID = ?", cust.LastService, id);
             }
 
-            foreach (var eq in cust.CustEquip)
-            {
-                var eqid = db.Query<CustEquip>("SELECT CustEquipID FROM CustEquip WHERE Diagnostics = ? AND SerialNum = ? AND CustomerID = ?", eq.Diagnostics, eq.SerialNum, eq.CustomerID);
-                eq.CustEquipID = eqid[0].CustEquipID;
-
-
-                if (eq.ModelNum != db.Query<CustEquip>("SELECT ModelNum FROM CustEquip WHERE CustomerID = ? AND CustEquipID = ?", id, eq.CustEquipID).ToString())
-                {
-                    db.Execute("UPDATE CustEquip SET ModelNum = ? WHERE CustomerID = ? AND CustEquipID = ?", eq.ModelNum, id, eq.CustEquipID);
-                }
-
-                if (eq.SerialNum != db.Query<CustEquip>("SELECT SerialNum FROM CustEquip WHERE CustomerID = ? AND CustEquipID = ?", id, eq.CustEquipID).ToString())
-                {
-                    db.Execute("UPDATE CustEquip SET SerialNum = ? WHERE CustomerID = ? AND CustEquipID = ?", eq.SerialNum, id, eq.CustEquipID);
-                }
-
-                if (eq.Name != db.Query<CustEquip>("SELECT Name FROM CustEquip WHERE CustomerID = ? AND CustEquipID = ?", id, eq.CustEquipID).ToString())
-                {
-                    db.Execute("UPDATE CustEquip SET Name = ? WHERE CustomerID = ? AND CustEquipID = ?", eq.Name, id, eq.CustEquipID);
-                }
-
-                if (eq.RentOwn != db.Query<CustEquip>("SELECT RentOwn FROM CustEquip WHERE CustomerID = ? AND CustEquipID = ?", id, eq.CustEquipID).ToString())
-                {
-                    db.Execute("UPDATE CustEquip SET RentOwn = ? WHERE CustomerID = ? AND CustEquipID = ?", eq.RentOwn, id, eq.CustEquipID);
-                }
-
-                if (eq.Type != db.Query<CustEquip>("SELECT Type FROM CustEquip WHERE CustomerID = ? AND CustEquipID = ?", id, eq.CustEquipID).ToString())
-                {
-                    db.Execute("UPDATE CustEquip SET Type = ? WHERE CustomerID = ? AND CustEquipID = ?", eq.Type, id, eq.CustEquipID);
-                }
-
-                if (eq.Diagnostics != db.Query<CustEquip>("SELECT Diagnostics FROM CustEquip WHERE CustomerID = ? AND CustEquipID = ?", id, eq.CustEquipID).ToString())
-                {
-                    db.Execute("UPDATE CustEquip SET Diagnostics = ? WHERE CustomerID = ? AND CustEquipID = ?", eq.Diagnostics, id, eq.CustEquipID);
-                }
-
-            }
-            }
 
         }
     }
+}

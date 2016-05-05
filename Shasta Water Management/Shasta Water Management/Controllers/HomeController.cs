@@ -28,13 +28,32 @@ namespace Shasta_Water_Management.Controllers
 
         public ActionResult Test()
         {
-            
-
-
-
-            
+            var customer = new Customer();
+            var equip = new CustEquip();
 
             
+
+            customer.CustomerID = 30;
+
+            customer.Name = "Barb Cena";
+
+            customer.Address = "3484 urhgieurhge";
+
+            customer.CellPhoneNum = "6666666666";
+
+            customer.Notes = "CATS ARE CATS ARE CATS";
+
+            equip.CustomerID = customer.CustomerID;
+
+            equip.ModelNum = "gerugheriug";
+
+            equip.Diagnostics = "diagnorteirhjg";
+
+
+
+            
+
+            CustomerRepository.AddCustomer(customer);
 
             var custs = CustomerRepository.GetCustomers();
 
